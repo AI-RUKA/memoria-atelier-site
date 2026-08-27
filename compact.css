@@ -1,0 +1,187 @@
+/* Third-pass landing-page compaction.
+   Kept separate so the visual experiment is easy to tune/remove. */
+
+.quick-open {
+  display: block;
+  width: fit-content;
+  margin: 14px auto 0;
+  color: var(--muted);
+  font-size: .78rem;
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(116,87,67,.35);
+}
+
+.quick-open:hover,
+.quick-open:focus-visible {
+  color: var(--wood-deep);
+}
+
+.hero {
+  min-height: 790px;
+  padding-top: 76px;
+  padding-bottom: 72px;
+}
+
+.hero-note {
+  margin-top: 32px;
+  margin-bottom: 22px;
+  padding-top: 19px;
+  padding-bottom: 19px;
+}
+
+.door {
+  width: 245px;
+  height: 265px;
+  margin-top: 42px;
+  margin-bottom: -82px;
+}
+
+.section {
+  padding-top: 78px;
+  padding-bottom: 78px;
+}
+
+.introduction {
+  padding-bottom: 68px;
+}
+
+.note-about {
+  max-width: 690px;
+}
+
+.first-steps {
+  padding-top: 62px;
+  padding-bottom: 62px;
+}
+
+.compact-guide {
+  max-width: 920px;
+  margin: 0 auto;
+  padding-top: clamp(30px,5vw,52px);
+  padding-bottom: clamp(30px,5vw,52px);
+}
+
+.compact-guide h2 {
+  margin-bottom: 20px;
+}
+
+.compact-notice {
+  margin: 22px 0 14px;
+  padding: 20px 22px;
+}
+
+.compact-notice h3 {
+  margin-bottom: 4px;
+}
+
+.compact-steps {
+  grid-template-columns: repeat(3,1fr);
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.compact-steps li {
+  grid-template-columns: 38px 1fr;
+  align-items: start;
+  gap: 10px;
+  padding: 18px 14px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(255,252,245,.58);
+}
+
+.compact-steps li > span {
+  width: 34px;
+  height: 34px;
+}
+
+.compact-steps p {
+  line-height: 1.65;
+}
+
+.guide-open {
+  display: flex;
+  width: fit-content;
+  margin: 26px auto 0;
+}
+
+.gallery {
+  padding-top: 82px;
+  padding-bottom: 82px;
+}
+
+.compact-storage {
+  padding-top: 68px;
+  padding-bottom: 68px;
+}
+
+.compact-storage h2 {
+  margin-bottom: 22px;
+}
+
+.compact-storage .storage-grid > div {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.final-door {
+  padding-top: 82px;
+  padding-bottom: 82px;
+}
+
+.final-door h2 {
+  margin-bottom: 10px;
+}
+
+.final-note {
+  margin-bottom: 22px;
+}
+
+footer {
+  padding-top: 38px;
+  padding-bottom: 38px;
+}
+
+@media (max-width: 720px) {
+  .hero {
+    min-height: 720px;
+    padding-top: 60px;
+    padding-bottom: 58px;
+  }
+
+  .brand-plaque {
+    min-width: min(88vw,720px);
+  }
+
+  .door {
+    width: 215px;
+    height: 235px;
+    margin-top: 36px;
+    margin-bottom: -74px;
+  }
+
+  .section {
+    padding-top: 62px;
+    padding-bottom: 62px;
+  }
+
+  .compact-steps {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .compact-steps li {
+    padding: 14px 12px;
+  }
+
+  .compact-notice {
+    padding: 18px;
+  }
+
+  .gallery,
+  .compact-storage,
+  .final-door {
+    padding-top: 62px;
+    padding-bottom: 62px;
+  }
+}

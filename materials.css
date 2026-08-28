@@ -1,0 +1,119 @@
+/* Extra real-material pass. Asset image data is loaded by materials.js. */
+:root {
+  --material-gingham: none;
+  --material-botanical: none;
+  --material-couple: none;
+}
+
+.hero {
+  position: relative;
+  isolation: isolate;
+}
+
+/* Couple stamp: a small signature beside the AI concept. */
+.hero::after {
+  content: "";
+  position: absolute;
+  right: clamp(10px, 4.5vw, 58px);
+  top: 190px;
+  width: clamp(92px, 13vw, 132px);
+  aspect-ratio: 300 / 310;
+  background-image: var(--material-couple);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: rotate(5deg);
+  opacity: .9;
+  z-index: 1;
+  pointer-events: none;
+  filter: drop-shadow(0 9px 12px rgba(72, 54, 41, .11));
+}
+
+/* Give the guide a real gingham-paper layer instead of CSS imitation. */
+.guide-card {
+  position: relative;
+  z-index: 0;
+}
+
+.guide-card:nth-child(2)::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: -10px;
+  right: 14px;
+  top: -17px;
+  height: 48px;
+  background-image: var(--material-gingham);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: rotate(-2deg);
+  opacity: .84;
+  border-radius: 4px;
+}
+
+/* Gallery uses the checked paper, storage uses the botanical paper. */
+.gallery > .section-paper-strip,
+.storage > .section-paper-strip {
+  display: none;
+}
+
+.gallery::before {
+  content: "";
+  display: block;
+  width: min(62vw, 380px);
+  height: 62px;
+  margin: -22px 0 26px auto;
+  background-image: var(--material-gingham);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: rotate(1deg);
+  opacity: .88;
+  pointer-events: none;
+}
+
+.storage::before {
+  content: "";
+  display: block;
+  width: min(70vw, 430px);
+  height: 70px;
+  margin: -24px auto 24px 0;
+  background-image: var(--material-botanical);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: rotate(-.8deg);
+  opacity: .9;
+  pointer-events: none;
+}
+
+/* Make the floral strip feel like pasted material rather than a header bar. */
+.first-steps .section-paper-strip {
+  width: min(65vw, 360px);
+  transform: rotate(-1.4deg);
+  opacity: .88;
+}
+
+@media (max-width: 720px) {
+  .hero::after {
+    right: -23px;
+    top: 176px;
+    width: 88px;
+    opacity: .78;
+  }
+
+  .gallery::before {
+    width: 72vw;
+    height: 48px;
+    margin-top: -12px;
+    margin-bottom: 18px;
+  }
+
+  .storage::before {
+    width: 78vw;
+    height: 52px;
+    margin-top: -12px;
+    margin-bottom: 18px;
+  }
+}

@@ -8,53 +8,48 @@
   <title>MEMORIA atelier | 本を開く前の扉</title>
   <link rel="stylesheet" href="./styles.css">
   <link rel="stylesheet" href="./compact.css">
+  <link rel="stylesheet" href="./materials-ui.css">
 </head>
 <body>
   <div class="page-shell">
-    <header class="hero" id="top">
-      <div class="hero-collage" aria-hidden="true">
-        <span class="hero-flower flower-a"></span>
-        <span class="hero-flower flower-b"></span>
-        <span class="glass-drop drop-a"></span>
-        <span class="glass-drop drop-b"></span>
-        <span class="paper-scrap scrap-a"></span>
-        <span class="paper-scrap scrap-b"></span>
+    <header class="hero material-hero" id="top">
+      <div class="material-scene" aria-hidden="true">
+        <img class="mat mat-paper mat-paper-floral" src="./assets/materials/floral-paper.webp" alt="">
+        <img class="mat mat-paper mat-paper-gingham" src="./assets/materials/transparent/gingham-paper.png" alt="">
+        <img class="mat mat-brooch" src="./assets/materials/transparent/flower-brooch.png" alt="">
+        <img class="mat mat-stamp" src="./assets/materials/transparent/couple-stamp.png" alt="">
+        <img class="mat mat-glass mat-glass-one" src="./assets/materials/transparent/glass-blob.png" alt="">
+        <img class="mat mat-glass mat-glass-two" src="./assets/materials/transparent/glass-circle.png" alt="">
       </div>
 
-      <div class="cookie-seal" aria-hidden="true"><span>❧</span></div>
-      <p class="eyebrow ai-concept">AIと一緒につくるジャーナル</p>
+      <img class="ai-badge" src="./assets/materials/transparent/ai-assisted-badge.png" alt="AI ASSISTED">
+      <p class="eyebrow ai-concept material-concept">AIと一緒につくるジャーナル</p>
 
-      <div class="brand-plaque" aria-label="MEMORIA atelier">
-        <span class="plaque-flower" aria-hidden="true">✿</span>
-        <h1>MEMORIA <small>atelier</small></h1>
-        <span class="plaque-flower" aria-hidden="true">✿</span>
+      <div class="material-brand" aria-label="MEMORIA atelier">
+        <img src="./assets/materials/memoria-cookie.webp" alt="MEMORIA">
+        <p>atelier</p>
       </div>
 
-      <div class="hero-note">
-        <p>写真・文字・シール・手書きを自由に重ねて、自分だけのデジタルジャーナルをつくれるブラウザアプリです。</p>
+      <div class="material-note hero-note">
+        <img src="./assets/materials/transparent/translucent-note-floral.png" alt="" aria-hidden="true">
+        <p>写真・文字・シール・手書きを自由に重ねて、<br>自分だけのデジタルジャーナルをつくれるブラウザアプリです。</p>
       </div>
 
-      <a class="primary-button" href="#start">
-        <span class="button-flower" aria-hidden="true">✿</span>
-        はじめての方へ
-        <span aria-hidden="true">↓</span>
-      </a>
+      <a class="primary-button" href="#start"><span aria-hidden="true">✿</span> はじめての方へ <span aria-hidden="true">↓</span></a>
       <a class="quick-open" href="https://memoria-atelier-hxr.netlify.app/" target="_blank" rel="noopener noreferrer">すぐMEMORIAをひらく →</a>
       <p class="button-note">無料・アカウント登録なしで使えます</p>
 
-      <div class="door" aria-hidden="true">
-        <div class="door-frame">
-          <div class="door-panel">
-            <span class="door-plaque"><i>✿</i> MEMORIA <i>✿</i></span>
-            <i class="door-knob"></i>
-          </div>
-        </div>
+      <div class="material-door" aria-hidden="true">
+        <div class="door-arch"><span class="door-knob"></span></div>
+        <img src="./assets/materials/memoria-cookie.webp" alt="">
       </div>
     </header>
 
     <main>
       <section class="section first-steps" id="start" aria-labelledby="start-title">
+        <img class="material-ribbon botanical-ribbon" src="./assets/materials/transparent/botanical-paper.png" alt="" aria-hidden="true">
         <div class="paper-card compact-guide visual-guide">
+          <img class="guide-books" src="./assets/materials/books-ornament.webp" alt="" aria-hidden="true">
           <p class="section-number">01</p>
           <p class="eyebrow">BEFORE OPENING</p>
           <h2 id="start-title">開く前に、これだけ。</h2>
@@ -62,155 +57,73 @@
 
           <div class="guide-grid">
             <article class="guide-card">
-              <div class="guide-visual visual-browser" aria-hidden="true">
-                <div class="mini-browser-top"><span></span><b>memoria</b><i>⋮</i></div>
-                <div class="mini-app-page"><span class="mini-door">M</span><em>MEMORIA</em></div>
-                <span class="guide-badge">1</span>
-              </div>
-              <div class="guide-copy">
-                <h3>ブラウザで開く</h3>
-                <p>Safari / Chromeがおすすめ。</p>
-              </div>
+              <div class="guide-visual visual-browser" aria-hidden="true"><div class="mini-browser-top"><span></span><b>memoria</b><i>⋮</i></div><div class="mini-app-page"><span class="mini-door">M</span><em>MEMORIA</em></div><span class="guide-badge">1</span></div>
+              <div class="guide-copy"><h3>ブラウザで開く</h3><p>Safari / Chromeがおすすめ。</p></div>
             </article>
-
             <article class="guide-card">
-              <div class="guide-visual visual-home" aria-hidden="true">
-                <div class="mini-browser-strip"><span>memoria</span><i>⋮</i></div>
-                <div class="mini-menu">
-                  <span>共有…</span>
-                  <span>ページ内検索</span>
-                  <strong>⌂ ホーム画面に追加</strong>
-                </div>
-                <span class="guide-badge">2</span>
-              </div>
-              <div class="guide-copy">
-                <h3>ホーム画面に追加</h3>
-                <p>いつも同じ入口から開けるよ。</p>
-              </div>
+              <div class="guide-visual visual-home" aria-hidden="true"><div class="mini-browser-strip"><span>memoria</span><i>⋮</i></div><div class="mini-menu"><span>共有…</span><span>ページ内検索</span><strong>⌂ ホーム画面に追加</strong></div><span class="guide-badge">2</span></div>
+              <div class="guide-copy"><h3>ホーム画面に追加</h3><p>いつも同じ入口から開けるよ。</p></div>
             </article>
-
             <article class="guide-card">
-              <div class="guide-visual visual-backup" aria-hidden="true">
-                <div class="mini-shelf-head"><span>MY JOURNALING</span><b>◉</b><i>＋</i></div>
-                <div class="mini-shelf">
-                  <span></span><span></span><span></span>
-                </div>
-                <div class="mini-highlight">本を管理</div>
-                <span class="guide-badge">3</span>
-              </div>
-              <div class="guide-copy">
-                <h3>本棚をバックアップ</h3>
-                <p>右上の白ボタンから、ときどき保存。</p>
-              </div>
+              <div class="guide-visual visual-backup" aria-hidden="true"><div class="mini-shelf-head"><span>MY JOURNALING</span><b>◉</b><i>＋</i></div><div class="mini-shelf"><span></span><span></span><span></span></div><div class="mini-highlight">本を管理</div><span class="guide-badge">3</span></div>
+              <div class="guide-copy"><h3>本棚をバックアップ</h3><p>右上の白ボタンから、ときどき保存。</p></div>
             </article>
-
             <article class="guide-card">
-              <div class="guide-visual visual-restore" aria-hidden="true">
-                <div class="mini-backup-panel">
-                  <span>KEEP YOUR MEMORIES</span>
-                  <button type="button" tabindex="-1">まるごと保存</button>
-                  <button type="button" tabindex="-1">↻ バックアップを戻す</button>
-                </div>
-                <span class="guide-badge">4</span>
-              </div>
-              <div class="guide-copy">
-                <h3>見えないときは復元</h3>
-                <p>保存したバックアップから戻せます。</p>
-              </div>
+              <div class="guide-visual visual-restore" aria-hidden="true"><div class="mini-backup-panel"><span>KEEP YOUR MEMORIES</span><button type="button" tabindex="-1">まるごと保存</button><button type="button" tabindex="-1">↻ バックアップを戻す</button></div><span class="guide-badge">4</span></div>
+              <div class="guide-copy"><h3>見えないときは復元</h3><p>保存したバックアップから戻せます。</p></div>
             </article>
           </div>
 
           <p class="guide-tip">※ X・LINEなどのアプリ内ブラウザでは、保存場所が別になることがあります。</p>
-
-          <a class="primary-button guide-open" href="https://memoria-atelier-hxr.netlify.app/" target="_blank" rel="noopener noreferrer">
-            <span class="button-flower" aria-hidden="true">✿</span>
-            MEMORIAをひらく
-            <span aria-hidden="true">→</span>
-          </a>
+          <a class="primary-button guide-open" href="https://memoria-atelier-hxr.netlify.app/" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">✿</span> MEMORIAをひらく <span aria-hidden="true">→</span></a>
         </div>
       </section>
 
-      <section class="section gallery" aria-labelledby="gallery-title">
-        <div class="section-ribbon ribbon-check" aria-hidden="true"></div>
+      <section class="section gallery material-gallery" aria-labelledby="gallery-title">
+        <img class="material-ribbon gingham-ribbon" src="./assets/materials/gingham-paper.webp" alt="" aria-hidden="true">
         <div class="section-heading">
-          <div>
-            <p class="section-number">02</p>
-            <p class="eyebrow">A PEEK INSIDE</p>
-            <h2 id="gallery-title">本のなかを、すこしだけ。</h2>
-          </div>
-          <div class="memo-label">
-            <span class="tape" aria-hidden="true"></span>
-            <p>ここは実際の画面に<br>差し替えていく予定です</p>
-          </div>
+          <div><p class="section-number">02</p><p class="eyebrow">A PEEK INSIDE</p><h2 id="gallery-title">本のなかを、すこしだけ。</h2></div>
+          <div class="material-memo"><img src="./assets/materials/transparent/small-memo.png" alt=""><p>ここは実際の画面に<br>差し替えていく予定です</p></div>
         </div>
 
         <div class="screenshots">
-          <figure class="screenshot-placeholder screenshot-tall">
-            <div class="stamp-tab" aria-hidden="true">MEMORIA</div>
+          <figure class="screenshot-placeholder screenshot-tall material-shot">
+            <img class="shot-ornament stamp-shot" src="./assets/materials/transparent/couple-stamp.png" alt="" aria-hidden="true">
             <div class="placeholder-art shelf-art" aria-hidden="true"><span></span><span></span><span></span></div>
-            <span class="glass-drop card-drop" aria-hidden="true"></span>
             <figcaption><strong>MY JOURNALING</strong><span>本棚から、今日の一冊を。</span></figcaption>
           </figure>
-
-          <figure class="screenshot-placeholder collage-card">
-            <span class="paper-tape tape-pink" aria-hidden="true"></span>
+          <figure class="screenshot-placeholder collage-card material-shot">
+            <img class="shot-tape" src="./assets/materials/floral-paper.webp" alt="" aria-hidden="true">
             <div class="placeholder-art page-art" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
             <figcaption><strong>CREATE A PAGE</strong><span>写真と言葉を自由に重ねて。</span></figcaption>
           </figure>
-
-          <figure class="screenshot-placeholder collage-card">
-            <span class="paper-tape tape-green" aria-hidden="true"></span>
+          <figure class="screenshot-placeholder collage-card material-shot">
+            <img class="shot-ornament brooch-shot" src="./assets/materials/transparent/flower-brooch.png" alt="" aria-hidden="true">
             <div class="placeholder-art preview-art" aria-hidden="true"><span>MEMORIA</span></div>
             <figcaption><strong>KEEP YOUR STORY</strong><span>完成したページをめくって楽しむ。</span></figcaption>
           </figure>
         </div>
       </section>
 
-      <section class="section storage compact-storage" aria-labelledby="storage-title">
-        <div class="section-ribbon ribbon-floral" aria-hidden="true"></div>
-        <p class="section-number">03</p>
-        <p class="eyebrow">YOUR DATA, YOUR DEVICE</p>
-        <h2 id="storage-title">保存について</h2>
-
+      <section class="section storage compact-storage material-storage" aria-labelledby="storage-title">
+        <img class="material-ribbon floral-ribbon" src="./assets/materials/floral-paper.webp" alt="" aria-hidden="true">
+        <p class="section-number">03</p><p class="eyebrow">YOUR DATA, YOUR DEVICE</p><h2 id="storage-title">保存について</h2>
         <div class="storage-grid">
-          <div class="small-note-card">
-            <span class="mini-flower" aria-hidden="true">✾</span>
-            <h3>端末内に保存</h3>
-            <p>本や写真のデータは、使っているブラウザの端末内に保存されます。</p>
-          </div>
-          <div class="small-note-card">
-            <span class="mini-flower" aria-hidden="true">❀</span>
-            <h3>バックアップを忘れずに</h3>
-            <p>端末変更などに備えて、ときどき本棚バックアップを保存してください。</p>
-          </div>
+          <div class="small-note-card material-storage-card"><img src="./assets/materials/transparent/translucent-note-floral.png" alt="" aria-hidden="true"><div><h3>端末内に保存</h3><p>本や写真のデータは、使っているブラウザの端末内に保存されます。</p></div></div>
+          <div class="small-note-card material-storage-card"><img src="./assets/materials/transparent/translucent-note-torn.png" alt="" aria-hidden="true"><div><h3>バックアップを忘れずに</h3><p>端末変更などに備えて、ときどき本棚バックアップを保存してください。</p></div></div>
         </div>
       </section>
 
-      <section class="final-door" aria-labelledby="final-title">
-        <div class="final-bubble bubble-one" aria-hidden="true"></div>
-        <div class="final-bubble bubble-two" aria-hidden="true"></div>
-        <p class="eyebrow">THE DOOR IS READY</p>
-        <h2 id="final-title">それでは、あなたの本を。</h2>
-        <div class="final-note">
-          <p>今日残したいものを、ひとつだけ。</p>
-        </div>
-        <a class="primary-button" href="https://memoria-atelier-hxr.netlify.app/" target="_blank" rel="noopener noreferrer">
-          <span class="button-flower" aria-hidden="true">✿</span>
-          MEMORIAをひらく
-          <span aria-hidden="true">→</span>
-        </a>
+      <section class="final-door material-final" aria-labelledby="final-title">
+        <img class="final-wreath" src="./assets/materials/transparent/floral-wreath.png" alt="" aria-hidden="true">
+        <img class="final-leaf" src="./assets/materials/transparent/cookie-leaf.png" alt="" aria-hidden="true">
+        <p class="eyebrow">THE DOOR IS READY</p><h2 id="final-title">それでは、あなたの本を。</h2>
+        <div class="final-note"><p>今日残したいものを、ひとつだけ。</p></div>
+        <a class="primary-button" href="https://memoria-atelier-hxr.netlify.app/" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">✿</span> MEMORIAをひらく <span aria-hidden="true">→</span></a>
       </section>
     </main>
 
-    <footer>
-      <div class="footer-bookmark" aria-hidden="true">
-        <span class="bookmark-book"></span>
-        <span class="bookmark-flower">✿</span>
-      </div>
-      <p>MEMORIA atelier</p>
-      <p class="credit">by H × RUKA</p>
-      <p class="footer-note">このページは現在、入口ページの試作版です。</p>
-    </footer>
+    <footer><img class="footer-books" src="./assets/materials/books-ornament.webp" alt="" aria-hidden="true"><p>MEMORIA atelier</p><p class="credit">by H × RUKA</p><p class="footer-note">このページは現在、入口ページの試作版です。</p></footer>
   </div>
 </body>
 </html>

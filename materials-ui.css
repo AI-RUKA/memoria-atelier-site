@@ -11,7 +11,7 @@
 .mat-glass { width:clamp(95px,15vw,170px); opacity:.3; filter:drop-shadow(0 10px 10px rgba(68,80,84,.08)); }
 .mat-glass-one { right:2%; top:33%; transform:rotate(18deg); }
 .mat-glass-two { left:1%; bottom:12%; }
-.ai-badge { width:clamp(112px,16vw,165px); height:auto; margin:0 auto 8px; display:block; opacity:.68; filter:invert(41%) sepia(9%) saturate(1000%) hue-rotate(340deg); }
+.ai-badge { width:clamp(112px,16vw,165px); height:auto; margin:0 auto 8px; display:block; opacity:.68; }
 .material-concept { margin-bottom:20px; }
 .material-brand { position:relative; width:min(82vw,560px); margin:0 auto; text-align:center; }
 .material-brand img { display:block; width:100%; height:auto; filter:drop-shadow(0 13px 18px rgba(108,72,37,.18)); }

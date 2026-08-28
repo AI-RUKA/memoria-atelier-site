@@ -1,8 +1,7 @@
 (() => {
   const assets = {
     '--material-gingham': './assets/gingham-paper.webp.b64.txt',
-    '--material-botanical': './assets/botanical-paper.webp.b64.txt',
-    '--material-couple': './assets/couple-stamp.webp.b64.txt'
+    '--material-botanical': './assets/botanical-paper.webp.b64.txt'
   };
 
   Promise.all(Object.entries(assets).map(async ([variable, path]) => {

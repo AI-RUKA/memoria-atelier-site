@@ -1,0 +1,45 @@
+/* Real material artwork layer. The base layout stays in styles.css / compact.css. */
+.material-hero { overflow: hidden; padding-top: 58px; }
+.material-scene,.material-scene .mat { position:absolute; pointer-events:none; }
+.material-scene { inset:0; z-index:-1; }
+.material-scene .mat { display:block; object-fit:contain; }
+.mat-paper { width:clamp(300px,48vw,620px); opacity:.5; }
+.mat-paper-floral { left:-9%; top:17%; transform:rotate(-8deg); }
+.mat-paper-gingham { right:-13%; bottom:22%; transform:rotate(8deg); opacity:.35; }
+.mat-brooch { width:clamp(70px,10vw,118px); left:7%; top:8%; transform:rotate(-13deg); filter:drop-shadow(0 9px 13px rgba(71,51,40,.12)); }
+.mat-stamp { width:clamp(68px,9vw,108px); right:7%; top:11%; transform:rotate(7deg); filter:drop-shadow(0 9px 12px rgba(71,51,40,.12)); }
+.mat-glass { width:clamp(95px,15vw,170px); opacity:.3; filter:drop-shadow(0 10px 10px rgba(68,80,84,.08)); }
+.mat-glass-one { right:2%; top:33%; transform:rotate(18deg); }
+.mat-glass-two { left:1%; bottom:12%; }
+.ai-badge { width:clamp(112px,16vw,165px); height:auto; margin:0 auto 8px; display:block; opacity:.68; filter:invert(41%) sepia(9%) saturate(1000%) hue-rotate(340deg); }
+.material-concept { margin-bottom:20px; }
+.material-brand { position:relative; width:min(82vw,560px); margin:0 auto; text-align:center; }
+.material-brand img { display:block; width:100%; height:auto; filter:drop-shadow(0 13px 18px rgba(108,72,37,.18)); }
+.material-brand p { margin:-4px 0 0; color:#816049; font-family:Georgia,"Times New Roman",serif; font-size:clamp(.85rem,2vw,1.06rem); font-style:italic; letter-spacing:.42em; text-indent:.42em; }
+.material-note { position:relative; width:min(88%,650px); min-height:132px; margin:26px auto 18px; display:grid; place-items:center; padding:28px 42px; background:none; border:0; box-shadow:none; }
+.material-note > img { position:absolute; inset:0; width:100%; height:100%; object-fit:fill; opacity:.64; filter:drop-shadow(0 12px 18px rgba(91,70,57,.08)); }
+.material-note p { position:relative; z-index:1; color:#61544d; line-height:2; }
+.material-door { position:relative; width:245px; height:270px; margin:36px auto -82px; padding:17px; border-radius:130px 130px 12px 12px; background:repeating-linear-gradient(90deg,rgba(108,67,34,.05) 0 2px,transparent 2px 9px),linear-gradient(110deg,#cb965d,#e5b879 48%,#b67d48); border:1px solid #a66d3b; box-shadow:0 25px 45px rgba(92,59,39,.2),inset 0 0 0 5px rgba(255,238,209,.3); }
+.door-arch { position:relative; width:100%; height:100%; border-radius:110px 110px 3px 3px; background:repeating-linear-gradient(90deg,rgba(255,255,255,.025) 0 1px,transparent 1px 8px),linear-gradient(145deg,#89634d,#5f4437); box-shadow:inset 0 0 30px rgba(0,0,0,.2); }
+.material-door > img { position:absolute; z-index:2; top:43%; left:50%; width:78%; transform:translate(-50%,-50%); filter:drop-shadow(0 6px 8px rgba(34,22,15,.22)); }
+.material-door .door-knob { right:23px; top:65%; }
+.material-ribbon { position:absolute; z-index:0; top:28px; left:clamp(22px,8vw,100px); width:min(56%,520px); height:auto; opacity:.58; pointer-events:none; }
+.guide-books { position:absolute; z-index:2; width:clamp(74px,12vw,126px); right:clamp(14px,4vw,45px); top:-36px; transform:rotate(5deg); filter:drop-shadow(0 10px 12px rgba(83,60,45,.12)); }
+.material-memo { position:relative; width:220px; min-height:150px; display:grid; place-items:center; text-align:center; }
+.material-memo img { position:absolute; inset:0; width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 9px 12px rgba(90,66,51,.08)); }
+.material-memo p { position:relative; z-index:1; width:70%; margin:0; color:var(--muted); font-size:.75rem; line-height:1.8; }
+.material-shot .shot-tape { position:absolute; z-index:4; top:-12px; left:50%; width:55%; transform:translateX(-50%) rotate(-2deg); opacity:.84; }
+.shot-ornament { position:absolute; z-index:5; filter:drop-shadow(0 7px 9px rgba(72,53,42,.14)); }
+.stamp-shot { width:80px; top:18px; left:-18px; transform:rotate(-7deg); }
+.brooch-shot { width:66px; top:-14px; right:-13px; transform:rotate(9deg); }
+.material-storage-card { isolation:isolate; overflow:hidden; display:grid; align-items:center; min-height:180px; background:rgba(255,255,255,.25); }
+.material-storage-card > img { position:absolute; z-index:-1; inset:-12%; width:124%; height:124%; object-fit:fill; opacity:.58; }
+.material-storage-card > div { position:relative; z-index:1; }
+.material-final { isolation:isolate; }
+.final-wreath { position:absolute; z-index:-1; width:clamp(230px,36vw,380px); left:50%; top:50%; transform:translate(-50%,-49%); opacity:.16; }
+.final-leaf { position:absolute; width:clamp(62px,9vw,94px); right:8%; bottom:10%; transform:rotate(9deg); opacity:.7; filter:drop-shadow(0 8px 10px rgba(91,61,40,.13)); }
+.footer-books { display:block; width:88px; height:auto; margin:0 auto 14px; filter:drop-shadow(0 8px 10px rgba(80,58,43,.12)); }
+@media (max-width:720px){
+  .material-hero{min-height:720px;padding-top:48px}.mat-brooch{left:-1%;top:8%}.mat-stamp{right:-1%;top:12%}.mat-paper-floral{left:-35%;top:18%}.mat-paper-gingham{right:-40%;bottom:19%}.mat-glass{opacity:.2}.material-brand{width:min(88vw,480px)}.material-note{min-height:122px;padding:23px 25px;margin-top:20px}.material-note p{font-size:.86rem;line-height:1.85}.material-door{width:210px;height:232px;margin-top:30px;margin-bottom:-72px}.guide-books{width:78px;right:8px;top:-23px}.material-memo{width:190px;min-height:130px;margin:20px 0 0 auto}.stamp-shot{width:62px;left:-8px}.brooch-shot{width:54px;right:-4px}.material-storage-card{min-height:150px}.final-leaf{right:-10px;bottom:4%;opacity:.5}
+}
+@media (max-width:390px){.ai-badge{width:105px}.material-note{width:96%;padding-left:20px;padding-right:20px}.material-note p br{display:none}.mat-stamp{display:none}.guide-books{opacity:.8}}

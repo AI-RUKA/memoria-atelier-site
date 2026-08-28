@@ -1,36 +1,17 @@
-# MEMORIA atelier entrance site
+# MEMORIA atelier — entrance page
 
-MEMORIA atelier の入口ホームページです。
+MEMORIA本体とは別repoで管理する、GitHub Pages用の軽い入口ページです。
 
-> 企業サイトではなく、MEMORIAの本を開く前の扉。
+## Current direction
+- MEMORIA本体のやわらかい木・クッキー・紙ものの世界観へ寄せる
+- 入口ページは短く、かわいさと最低限の案内を優先
+- 「こんなことができるよ」はスクリーンショット側で見せる
+- 初回案内はリンクより前に配置
+- Safari / Chrome、ホーム画面追加、バックアップ、復元を2×2の小さな図解で見せる
+- 実際のスクリーンショット素材へ後から差し替えやすい構造にする
 
-## 分離方針
+## Production app
+https://memoria-atelier-hxr.netlify.app/
 
-- アプリ本体: `AI-RUKA/memoria-atelier`（変更しません）
-- 入口ページ: `AI-RUKA/memoria-atelier-site`（このrepo）
-- 公開先: GitHub Pages
-- アプリへのリンク: https://memoria-atelier-hxr.netlify.app/
-
-## ファイル
-
-- `index.html` — 文言・セクション・アプリへのリンク
-- `styles.css` — 古紙・アンティーク・扉のデザイン
-
-外部ライブラリ、ビルド処理、アクセス解析は使用していません。
-
-## スクリーンショットを差し替えるとき
-
-現在は `index.html` の `.placeholder-art` が仮画像です。
-実際のスクリーンショットが決まったら `assets/screenshots/` に保存し、各仮画像を `<img>` に置き換えます。
-
-おすすめの3枚:
-
-1. 本棚入口
-2. ページ編集画面
-3. 完成ページのプレビュー
-
-公開したくない本の名前、本文、人物写真などが写らない「公開用サンプル本」を推奨します。
-
-## 現在の状態
-
-土台と見た目の方向性を確認するための試作版です。文言、スクリーンショット、細かな装飾は後から調整します。
+## Workflow
+mainへ直接大きな変更を入れず、branch → 見た目確認 → 微調整 → merge の順で進めます。

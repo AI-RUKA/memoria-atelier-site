@@ -1,1 +1,0 @@
-Decorative assets are committed as optimized WebP files on this branch. Temporary helper text files may be removed before merge.

@@ -3,113 +3,210 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f5eee6">
-  <meta name="description" content="MEMORIA atelier — 写真や言葉、シールを重ねて、自分だけのデジタルジャーナルを作れる小さなアトリエ。">
+  <meta name="theme-color" content="#f7f1e7">
+  <meta name="description" content="MEMORIA atelier — 写真・文字・シール・手書きを自由に重ねて、自分だけのデジタルジャーナルをつくれるブラウザアプリ。">
   <title>MEMORIA atelier | 本を開く前の扉</title>
   <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./compact.css">
 </head>
 <body>
   <div class="page-shell">
     <header class="hero" id="top">
-      <div class="hero-ornament" aria-hidden="true">✦</div>
-      <p class="eyebrow">A LITTLE DOOR TO YOUR MEMORIES</p>
-      <h1>MEMORIA <span>atelier</span></h1>
-      <p class="hero-copy">写真と言葉をそっと重ねて、<br>あなただけの小さな本をつくる場所。</p>
-      <a class="primary-button" href="https://memoria-atelier-hxr.netlify.app/" target="_blank" rel="noopener noreferrer">
-        MEMORIAの扉をひらく <span aria-hidden="true">→</span>
+      <div class="hero-collage" aria-hidden="true">
+        <span class="hero-flower flower-a"></span>
+        <span class="hero-flower flower-b"></span>
+        <span class="glass-drop drop-a"></span>
+        <span class="glass-drop drop-b"></span>
+        <span class="paper-scrap scrap-a"></span>
+        <span class="paper-scrap scrap-b"></span>
+      </div>
+
+      <div class="cookie-seal" aria-hidden="true"><span>❧</span></div>
+      <p class="eyebrow ai-concept">AIと一緒につくるジャーナル</p>
+
+      <div class="brand-plaque" aria-label="MEMORIA atelier">
+        <span class="plaque-flower" aria-hidden="true">✿</span>
+        <h1>MEMORIA <small>atelier</small></h1>
+        <span class="plaque-flower" aria-hidden="true">✿</span>
+      </div>
+
+      <div class="hero-note">
+        <p>写真・文字・シール・手書きを自由に重ねて、自分だけのデジタルジャーナルをつくれるブラウザアプリです。</p>
+      </div>
+
+      <a class="primary-button" href="#start">
+        <span class="button-flower" aria-hidden="true">✿</span>
+        はじめての方へ
+        <span aria-hidden="true">↓</span>
       </a>
+      <a class="quick-open" href="https://memoria-atelier-hxr.netlify.app/" target="_blank" rel="noopener noreferrer">すぐMEMORIAをひらく →</a>
       <p class="button-note">無料・アカウント登録なしで使えます</p>
+
       <div class="door" aria-hidden="true">
         <div class="door-frame">
-          <div class="door-panel"><span class="door-mark">M</span><i class="door-knob"></i></div>
+          <div class="door-panel">
+            <span class="door-plaque"><i>✿</i> MEMORIA <i>✿</i></span>
+            <i class="door-knob"></i>
+          </div>
         </div>
       </div>
     </header>
 
     <main>
-      <section class="section introduction" aria-labelledby="about-title">
-        <p class="section-number">01</p>
-        <p class="eyebrow">ABOUT MEMORIA</p>
-        <h2 id="about-title">思い出をしまう、<br>一冊のアトリエ。</h2>
-        <p>MEMORIA atelierは、写真・文字・シール・手書きを自由に組み合わせて、コラージュやデジタルジャーナルを作れるブラウザアプリです。日記にも、AIパートナーとの記録にも、好きなものを集める本にも。</p>
+      <section class="section first-steps" id="start" aria-labelledby="start-title">
+        <div class="paper-card compact-guide visual-guide">
+          <p class="section-number">01</p>
+          <p class="eyebrow">BEFORE OPENING</p>
+          <h2 id="start-title">開く前に、これだけ。</h2>
+          <p class="guide-lead">最初だけ、4つをさらっと見てね。</p>
+
+          <div class="guide-grid">
+            <article class="guide-card">
+              <div class="guide-visual visual-browser" aria-hidden="true">
+                <div class="mini-browser-top"><span></span><b>memoria</b><i>⋮</i></div>
+                <div class="mini-app-page"><span class="mini-door">M</span><em>MEMORIA</em></div>
+                <span class="guide-badge">1</span>
+              </div>
+              <div class="guide-copy">
+                <h3>ブラウザで開く</h3>
+                <p>Safari / Chromeがおすすめ。</p>
+              </div>
+            </article>
+
+            <article class="guide-card">
+              <div class="guide-visual visual-home" aria-hidden="true">
+                <div class="mini-browser-strip"><span>memoria</span><i>⋮</i></div>
+                <div class="mini-menu">
+                  <span>共有…</span>
+                  <span>ページ内検索</span>
+                  <strong>⌂ ホーム画面に追加</strong>
+                </div>
+                <span class="guide-badge">2</span>
+              </div>
+              <div class="guide-copy">
+                <h3>ホーム画面に追加</h3>
+                <p>いつも同じ入口から開けるよ。</p>
+              </div>
+            </article>
+
+            <article class="guide-card">
+              <div class="guide-visual visual-backup" aria-hidden="true">
+                <div class="mini-shelf-head"><span>MY JOURNALING</span><b>◉</b><i>＋</i></div>
+                <div class="mini-shelf">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="mini-highlight">本を管理</div>
+                <span class="guide-badge">3</span>
+              </div>
+              <div class="guide-copy">
+                <h3>本棚をバックアップ</h3>
+                <p>右上の白ボタンから、ときどき保存。</p>
+              </div>
+            </article>
+
+            <article class="guide-card">
+              <div class="guide-visual visual-restore" aria-hidden="true">
+                <div class="mini-backup-panel">
+                  <span>KEEP YOUR MEMORIES</span>
+                  <button type="button" tabindex="-1">まるごと保存</button>
+                  <button type="button" tabindex="-1">↻ バックアップを戻す</button>
+                </div>
+                <span class="guide-badge">4</span>
+              </div>
+              <div class="guide-copy">
+                <h3>見えないときは復元</h3>
+                <p>保存したバックアップから戻せます。</p>
+              </div>
+            </article>
+          </div>
+
+          <p class="guide-tip">※ X・LINEなどのアプリ内ブラウザでは、保存場所が別になることがあります。</p>
+
+          <a class="primary-button guide-open" href="https://memoria-atelier-hxr.netlify.app/" target="_blank" rel="noopener noreferrer">
+            <span class="button-flower" aria-hidden="true">✿</span>
+            MEMORIAをひらく
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
       </section>
 
       <section class="section gallery" aria-labelledby="gallery-title">
+        <div class="section-ribbon ribbon-check" aria-hidden="true"></div>
         <div class="section-heading">
           <div>
             <p class="section-number">02</p>
             <p class="eyebrow">A PEEK INSIDE</p>
             <h2 id="gallery-title">本のなかを、すこしだけ。</h2>
           </div>
-          <p class="replace-note">スクリーンショットは後から差し替え予定です</p>
+          <div class="memo-label">
+            <span class="tape" aria-hidden="true"></span>
+            <p>ここは実際の画面に<br>差し替えていく予定です</p>
+          </div>
         </div>
+
         <div class="screenshots">
           <figure class="screenshot-placeholder screenshot-tall">
+            <div class="stamp-tab" aria-hidden="true">MEMORIA</div>
             <div class="placeholder-art shelf-art" aria-hidden="true"><span></span><span></span><span></span></div>
+            <span class="glass-drop card-drop" aria-hidden="true"></span>
             <figcaption><strong>MY JOURNALING</strong><span>本棚から、今日の一冊を。</span></figcaption>
           </figure>
-          <figure class="screenshot-placeholder">
+
+          <figure class="screenshot-placeholder collage-card">
+            <span class="paper-tape tape-pink" aria-hidden="true"></span>
             <div class="placeholder-art page-art" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
             <figcaption><strong>CREATE A PAGE</strong><span>写真と言葉を自由に重ねて。</span></figcaption>
           </figure>
-          <figure class="screenshot-placeholder">
+
+          <figure class="screenshot-placeholder collage-card">
+            <span class="paper-tape tape-green" aria-hidden="true"></span>
             <div class="placeholder-art preview-art" aria-hidden="true"><span>MEMORIA</span></div>
             <figcaption><strong>KEEP YOUR STORY</strong><span>完成したページをめくって楽しむ。</span></figcaption>
           </figure>
         </div>
       </section>
 
-      <section class="section features" aria-labelledby="features-title">
+      <section class="section storage compact-storage" aria-labelledby="storage-title">
+        <div class="section-ribbon ribbon-floral" aria-hidden="true"></div>
         <p class="section-number">03</p>
-        <p class="eyebrow">WHAT YOU CAN DO</p>
-        <h2 id="features-title">こんなことができるよ</h2>
-        <div class="feature-grid">
-          <article><span class="feature-icon" aria-hidden="true">▧</span><h3>自由にコラージュ</h3><p>写真や文字、シール、背景を好きな位置に重ねられます。</p></article>
-          <article><span class="feature-icon" aria-hidden="true">✎</span><h3>手書きで残す</h3><p>ペンやクレヨンで、ページへ直接書き込めます。</p></article>
-          <article><span class="feature-icon" aria-hidden="true">♡</span><h3>自分の素材も追加</h3><p>透過PNGなどをマイポケットへ入れて繰り返し使えます。</p></article>
-          <article><span class="feature-icon" aria-hidden="true">⇩</span><h3>保存・書き出し</h3><p>PNG・PDFで作品を残し、本棚全体のバックアップも作れます。</p></article>
-        </div>
-      </section>
-
-      <section class="section first-steps" aria-labelledby="start-title">
-        <div class="paper-card">
-          <p class="section-number">04</p>
-          <p class="eyebrow">BEFORE OPENING</p>
-          <h2 id="start-title">はじめての方へ</h2>
-          <div class="notice">
-            <span class="notice-icon" aria-hidden="true">⌂</span>
-            <div>
-              <h3>Safari / Chromeで開くのがおすすめです</h3>
-              <p>X・LINEなどのアプリ内ブラウザでは、保存場所が別になったり、一部の操作が安定しないことがあります。リンクをSafariまたはChromeで開き、ホーム画面へ追加してお使いください。</p>
-            </div>
-          </div>
-          <ol class="steps">
-            <li><span>1</span><p><strong>ブラウザで開く</strong>iPhoneはSafari、AndroidはChromeがおすすめ。</p></li>
-            <li><span>2</span><p><strong>ホーム画面へ追加</strong>いつでも同じ入口から開けるようにします。</p></li>
-            <li><span>3</span><p><strong>バックアップを保存</strong>大切な本は定期的に本棚バックアップを保存してください。</p></li>
-          </ol>
-        </div>
-      </section>
-
-      <section class="section storage" aria-labelledby="storage-title">
-        <p class="section-number">05</p>
         <p class="eyebrow">YOUR DATA, YOUR DEVICE</p>
         <h2 id="storage-title">保存について</h2>
+
         <div class="storage-grid">
-          <div><h3>端末内に保存</h3><p>ジャーナル本文や写真、本棚のデータは、使用しているブラウザの端末内へ保存されます。ブラウザや開き方が変わると、別の保存場所として扱われることがあります。</p></div>
-          <div><h3>バックアップを忘れずに</h3><p>端末変更・ブラウザデータの削除・不具合に備えて、本棚の管理から定期的にバックアップファイルを保存してください。</p></div>
+          <div class="small-note-card">
+            <span class="mini-flower" aria-hidden="true">✾</span>
+            <h3>端末内に保存</h3>
+            <p>本や写真のデータは、使っているブラウザの端末内に保存されます。</p>
+          </div>
+          <div class="small-note-card">
+            <span class="mini-flower" aria-hidden="true">❀</span>
+            <h3>バックアップを忘れずに</h3>
+            <p>端末変更などに備えて、ときどき本棚バックアップを保存してください。</p>
+          </div>
         </div>
       </section>
 
       <section class="final-door" aria-labelledby="final-title">
+        <div class="final-bubble bubble-one" aria-hidden="true"></div>
+        <div class="final-bubble bubble-two" aria-hidden="true"></div>
         <p class="eyebrow">THE DOOR IS READY</p>
         <h2 id="final-title">それでは、あなたの本を。</h2>
-        <p>うまく作ろうとしなくて大丈夫。今日残したいものを、ひとつだけ。</p>
-        <a class="primary-button" href="https://memoria-atelier-hxr.netlify.app/" target="_blank" rel="noopener noreferrer">MEMORIAをひらく <span aria-hidden="true">→</span></a>
+        <div class="final-note">
+          <p>今日残したいものを、ひとつだけ。</p>
+        </div>
+        <a class="primary-button" href="https://memoria-atelier-hxr.netlify.app/" target="_blank" rel="noopener noreferrer">
+          <span class="button-flower" aria-hidden="true">✿</span>
+          MEMORIAをひらく
+          <span aria-hidden="true">→</span>
+        </a>
       </section>
     </main>
 
     <footer>
+      <div class="footer-bookmark" aria-hidden="true">
+        <span class="bookmark-book"></span>
+        <span class="bookmark-flower">✿</span>
+      </div>
       <p>MEMORIA atelier</p>
       <p class="credit">by H × RUKA</p>
       <p class="footer-note">このページは現在、入口ページの試作版です。</p>

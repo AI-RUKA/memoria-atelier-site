@@ -2,31 +2,11 @@
 :root {
   --material-gingham: none;
   --material-botanical: none;
-  --material-couple: none;
 }
 
 .hero {
   position: relative;
   isolation: isolate;
-}
-
-/* Couple stamp: a small signature beside the AI concept. */
-.hero::after {
-  content: "";
-  position: absolute;
-  right: clamp(10px, 4.5vw, 58px);
-  top: 190px;
-  width: clamp(92px, 13vw, 132px);
-  aspect-ratio: 300 / 310;
-  background-image: var(--material-couple);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  transform: rotate(5deg);
-  opacity: .9;
-  z-index: 1;
-  pointer-events: none;
-  filter: drop-shadow(0 9px 12px rgba(72, 54, 41, .11));
 }
 
 /* Give the guide a real gingham-paper layer instead of CSS imitation. */
@@ -88,6 +68,21 @@
   pointer-events: none;
 }
 
+/* Reuse the real embroidered books as a larger edge ornament in the gallery. */
+.gallery::after {
+  content: "";
+  position: absolute;
+  right: -38px;
+  bottom: 54px;
+  width: clamp(110px, 15vw, 165px);
+  aspect-ratio: 971 / 1000;
+  background: url("./assets/books-ornament.webp") center / contain no-repeat;
+  transform: rotate(6deg);
+  opacity: .74;
+  filter: drop-shadow(0 10px 14px rgba(69, 53, 42, .10));
+  pointer-events: none;
+}
+
 /* Make the floral strip feel like pasted material rather than a header bar. */
 .first-steps .section-paper-strip {
   width: min(65vw, 360px);
@@ -95,14 +90,21 @@
   opacity: .88;
 }
 
-@media (max-width: 720px) {
-  .hero::after {
-    right: -23px;
-    top: 176px;
-    width: 88px;
-    opacity: .78;
-  }
+/* Let the real MEMORIA cookie appear as a small tucked-in plaque on the guide. */
+.visual-guide::after {
+  content: "";
+  position: absolute;
+  right: 30px;
+  top: 28px;
+  width: 116px;
+  height: 42px;
+  background: url("./assets/memoria-cookie.webp") center / contain no-repeat;
+  opacity: .8;
+  transform: rotate(2deg);
+  pointer-events: none;
+}
 
+@media (max-width: 720px) {
   .gallery::before {
     width: 72vw;
     height: 48px;
@@ -115,5 +117,20 @@
     height: 52px;
     margin-top: -12px;
     margin-bottom: 18px;
+  }
+
+  .gallery::after {
+    right: -46px;
+    bottom: 48px;
+    width: 112px;
+    opacity: .62;
+  }
+
+  .visual-guide::after {
+    right: 14px;
+    top: 18px;
+    width: 88px;
+    height: 32px;
+    opacity: .65;
   }
 }

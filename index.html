@@ -4,8 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f7f1e7">
-  <meta name="description" content="MEMORIA atelier — 写真・文字・シール・手書きを自由に重ねて、自分だけのデジタルジャーナルをつくれるブラウザアプリ。">
-  <title>MEMORIA atelier | 本を開く前の扉</title>
+  <meta name="description" content="MEMORIA atelierは、写真・文字・シール・手書きを自由に重ねてつくる、ブラウザで使えるデジタルジャーナルアプリです。AIと一緒につくるジャーナル体験を楽しめます。">
+  <meta name="keywords" content="MEMORIA atelier, デジタルジャーナル, デジタルジャーナルアプリ, ブラウザジャーナル, digital journal, digital journaling, browser journal, AI assisted journal">
+  <meta property="og:title" content="MEMORIA atelier | ブラウザで使えるデジタルジャーナルアプリ">
+  <meta property="og:description" content="写真・文字・シール・手書きを自由に重ねて、自分だけのデジタルジャーナルをつくれるブラウザアプリです。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ai-ruka.github.io/memoria-atelier-site/">
+  <link rel="canonical" href="https://ai-ruka.github.io/memoria-atelier-site/">
+  <title>MEMORIA atelier | ブラウザで使えるデジタルジャーナルアプリ</title>
   <link rel="stylesheet" href="./styles.css">
   <link rel="stylesheet" href="./compact.css">
   <link rel="stylesheet" href="./materials-ui.css">
@@ -13,16 +19,8 @@
 <body>
   <div class="page-shell">
     <header class="hero material-hero" id="top">
-      <div class="material-scene" aria-hidden="true">
-        <img class="mat mat-paper mat-paper-floral" src="./assets/materials/floral-paper.webp" alt="">
-        <img class="mat mat-paper mat-paper-gingham" src="./assets/materials/transparent/gingham-paper.png" alt="">
-        <img class="mat mat-brooch" src="./assets/materials/transparent/flower-brooch.png" alt="">
-        <img class="mat mat-stamp" src="./assets/materials/transparent/couple-stamp.png" alt="">
-        <img class="mat mat-glass mat-glass-one" src="./assets/materials/transparent/glass-blob.png" alt="">
-        <img class="mat mat-glass mat-glass-two" src="./assets/materials/transparent/glass-circle.png" alt="">
-      </div>
+      <div class="quiet-hero-paper" aria-hidden="true"></div>
 
-      <img class="ai-badge" src="./assets/materials/transparent/ai-assisted-badge.png" alt="AI ASSISTED">
       <p class="eyebrow ai-concept material-concept">AIと一緒につくるジャーナル</p>
 
       <div class="material-brand" aria-label="MEMORIA atelier">
@@ -31,8 +29,7 @@
       </div>
 
       <div class="material-note hero-note">
-        <img src="./assets/materials/transparent/translucent-note-floral.png" alt="" aria-hidden="true">
-        <p>写真・文字・シール・手書きを自由に重ねて、<br>自分だけのデジタルジャーナルをつくれるブラウザアプリです。</p>
+        <p>写真・文字・シール・手書きを自由に重ねて、自分だけのデジタルジャーナルをつくれるブラウザアプリです。</p>
       </div>
 
       <a class="primary-button" href="#start"><span aria-hidden="true">✿</span> はじめての方へ <span aria-hidden="true">↓</span></a>
@@ -47,9 +44,7 @@
 
     <main>
       <section class="section first-steps" id="start" aria-labelledby="start-title">
-        <img class="material-ribbon botanical-ribbon" src="./assets/materials/transparent/botanical-paper.png" alt="" aria-hidden="true">
         <div class="paper-card compact-guide visual-guide">
-          <img class="guide-books" src="./assets/materials/books-ornament.webp" alt="" aria-hidden="true">
           <p class="section-number">01</p>
           <p class="eyebrow">BEFORE OPENING</p>
           <h2 id="start-title">開く前に、これだけ。</h2>
@@ -66,7 +61,7 @@
             </article>
             <article class="guide-card">
               <div class="guide-visual visual-backup" aria-hidden="true"><div class="mini-shelf-head"><span>MY JOURNALING</span><b>◉</b><i>＋</i></div><div class="mini-shelf"><span></span><span></span><span></span></div><div class="mini-highlight">本を管理</div><span class="guide-badge">3</span></div>
-              <div class="guide-copy"><h3>本棚をバックアップ</h3><p>右上の白ボタンから、ときどき保存。</p></div>
+              <div class="guide-copy"><h3>本棚をバックアップ</h3><p>右上の白い「本を管理」から、ときどき保存。</p></div>
             </article>
             <article class="guide-card">
               <div class="guide-visual visual-restore" aria-hidden="true"><div class="mini-backup-panel"><span>KEEP YOUR MEMORIES</span><button type="button" tabindex="-1">まるごと保存</button><button type="button" tabindex="-1">↻ バックアップを戻す</button></div><span class="guide-badge">4</span></div>
@@ -80,25 +75,21 @@
       </section>
 
       <section class="section gallery material-gallery" aria-labelledby="gallery-title">
-        <img class="material-ribbon gingham-ribbon" src="./assets/materials/gingham-paper.webp" alt="" aria-hidden="true">
         <div class="section-heading">
           <div><p class="section-number">02</p><p class="eyebrow">A PEEK INSIDE</p><h2 id="gallery-title">本のなかを、すこしだけ。</h2></div>
-          <div class="material-memo"><img src="./assets/materials/transparent/small-memo.png" alt=""><p>ここは実際の画面に<br>差し替えていく予定です</p></div>
+          <p class="gallery-note">実際の画面写真は、あとからここへ。</p>
         </div>
 
         <div class="screenshots">
           <figure class="screenshot-placeholder screenshot-tall material-shot">
-            <img class="shot-ornament stamp-shot" src="./assets/materials/transparent/couple-stamp.png" alt="" aria-hidden="true">
             <div class="placeholder-art shelf-art" aria-hidden="true"><span></span><span></span><span></span></div>
             <figcaption><strong>MY JOURNALING</strong><span>本棚から、今日の一冊を。</span></figcaption>
           </figure>
           <figure class="screenshot-placeholder collage-card material-shot">
-            <img class="shot-tape" src="./assets/materials/floral-paper.webp" alt="" aria-hidden="true">
             <div class="placeholder-art page-art" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
             <figcaption><strong>CREATE A PAGE</strong><span>写真と言葉を自由に重ねて。</span></figcaption>
           </figure>
           <figure class="screenshot-placeholder collage-card material-shot">
-            <img class="shot-ornament brooch-shot" src="./assets/materials/transparent/flower-brooch.png" alt="" aria-hidden="true">
             <div class="placeholder-art preview-art" aria-hidden="true"><span>MEMORIA</span></div>
             <figcaption><strong>KEEP YOUR STORY</strong><span>完成したページをめくって楽しむ。</span></figcaption>
           </figure>
@@ -106,24 +97,22 @@
       </section>
 
       <section class="section storage compact-storage material-storage" aria-labelledby="storage-title">
-        <img class="material-ribbon floral-ribbon" src="./assets/materials/floral-paper.webp" alt="" aria-hidden="true">
         <p class="section-number">03</p><p class="eyebrow">YOUR DATA, YOUR DEVICE</p><h2 id="storage-title">保存について</h2>
         <div class="storage-grid">
-          <div class="small-note-card material-storage-card"><img src="./assets/materials/transparent/translucent-note-floral.png" alt="" aria-hidden="true"><div><h3>端末内に保存</h3><p>本や写真のデータは、使っているブラウザの端末内に保存されます。</p></div></div>
-          <div class="small-note-card material-storage-card"><img src="./assets/materials/transparent/translucent-note-torn.png" alt="" aria-hidden="true"><div><h3>バックアップを忘れずに</h3><p>端末変更などに備えて、ときどき本棚バックアップを保存してください。</p></div></div>
+          <div class="small-note-card material-storage-card"><div><h3>端末内に保存</h3><p>本や写真のデータは、使っているブラウザの端末内に保存されます。</p></div></div>
+          <div class="small-note-card material-storage-card"><div><h3>バックアップを忘れずに</h3><p>端末変更などに備えて、ときどき本棚バックアップを保存してください。</p></div></div>
         </div>
       </section>
 
       <section class="final-door material-final" aria-labelledby="final-title">
         <img class="final-wreath" src="./assets/materials/transparent/floral-wreath.png" alt="" aria-hidden="true">
-        <img class="final-leaf" src="./assets/materials/transparent/cookie-leaf.png" alt="" aria-hidden="true">
         <p class="eyebrow">THE DOOR IS READY</p><h2 id="final-title">それでは、あなたの本を。</h2>
         <div class="final-note"><p>今日残したいものを、ひとつだけ。</p></div>
         <a class="primary-button" href="https://memoria-atelier-hxr.netlify.app/" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">✿</span> MEMORIAをひらく <span aria-hidden="true">→</span></a>
       </section>
     </main>
 
-    <footer><img class="footer-books" src="./assets/materials/books-ornament.webp" alt="" aria-hidden="true"><p>MEMORIA atelier</p><p class="credit">by H × RUKA</p><p class="footer-note">このページは現在、入口ページの試作版です。</p></footer>
+    <footer><img class="footer-books" src="./assets/materials/books-ornament.webp" alt="" aria-hidden="true"><p>MEMORIA atelier</p><p class="credit">by H × RUKA</p></footer>
   </div>
 </body>
 </html>

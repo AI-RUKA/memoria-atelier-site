@@ -5,16 +5,12 @@
   radial-gradient(circle at 84% 24%,rgba(173,201,211,.11),transparent 27%),
   linear-gradient(rgba(255,255,255,.22),rgba(255,255,255,.22)); }
 .material-concept { margin-bottom:22px; }
-.material-brand { position:relative; width:min(80vw,520px); margin:0 auto; text-align:center; }
+.material-brand { position:relative; width:min(68vw,430px); margin:0 auto; text-align:center; }
 .material-brand img { display:block; width:100%; height:auto; filter:drop-shadow(0 12px 18px rgba(108,72,37,.16)); }
 .material-brand p { margin:-2px 0 0; color:#816049; font-family:Georgia,"Times New Roman",serif; font-size:clamp(.85rem,2vw,1.04rem); font-style:italic; letter-spacing:.42em; text-indent:.42em; }
 .material-note { position:relative; width:min(88%,640px); margin:28px auto 20px; padding:22px 30px; background:rgba(255,253,247,.72); border:1px solid rgba(159,126,95,.16); border-radius:18px; box-shadow:0 10px 28px rgba(91,70,57,.07); backdrop-filter:blur(4px); }
 .material-note::before { content:""; position:absolute; width:76px; height:20px; left:34px; top:-10px; background:rgba(232,216,188,.66); transform:rotate(-3deg); box-shadow:inset 0 0 0 1px rgba(133,101,73,.04); }
 .material-note p { position:relative; z-index:1; margin:0; color:#61544d; line-height:2; }
-.material-door { position:relative; width:228px; height:252px; margin:38px auto -78px; padding:16px; border-radius:122px 122px 12px 12px; background:repeating-linear-gradient(90deg,rgba(108,67,34,.045) 0 2px,transparent 2px 9px),linear-gradient(110deg,#cb965d,#e5b879 48%,#b67d48); border:1px solid #a66d3b; box-shadow:0 24px 40px rgba(92,59,39,.18),inset 0 0 0 5px rgba(255,238,209,.28); }
-.door-arch { position:relative; width:100%; height:100%; border-radius:104px 104px 3px 3px; background:repeating-linear-gradient(90deg,rgba(255,255,255,.024) 0 1px,transparent 1px 8px),linear-gradient(145deg,#89634d,#5f4437); box-shadow:inset 0 0 26px rgba(0,0,0,.18); }
-.material-door > img { position:absolute; z-index:2; top:43%; left:50%; width:75%; transform:translate(-50%,-50%); filter:drop-shadow(0 6px 8px rgba(34,22,15,.20)); }
-.material-door .door-knob { right:22px; top:65%; }
 .visual-guide { position:relative; }
 .gallery-note { margin:12px 0 0; color:var(--muted); font-size:.76rem; letter-spacing:.03em; }
 .material-shot { overflow:hidden; }
@@ -25,15 +21,14 @@
 .final-wreath { position:absolute; z-index:-1; width:clamp(240px,34vw,360px); left:50%; top:50%; transform:translate(-50%,-49%); opacity:.12; }
 .footer-books { display:block; width:82px; height:auto; margin:0 auto 14px; opacity:.88; filter:drop-shadow(0 7px 9px rgba(80,58,43,.10)); }
 @media (max-width:720px){
-  .material-hero{min-height:700px;padding-top:50px}
-  .material-brand{width:min(88vw,470px)}
+  .material-hero{min-height:auto;padding-top:50px;padding-bottom:78px}
+  .material-brand{width:min(74vw,390px)}
   .material-note{width:94%;padding:20px 22px;margin-top:21px}
   .material-note p{font-size:.86rem;line-height:1.9}
-  .material-door{width:202px;height:224px;margin-top:30px;margin-bottom:-70px}
   .gallery-note{font-size:.7rem}
   .material-storage-card{min-height:142px}
 }
 @media (max-width:390px){
   .material-note{width:96%;padding-left:18px;padding-right:18px}
-  .material-brand{width:91vw}
+  .material-brand{width:76vw}
 }

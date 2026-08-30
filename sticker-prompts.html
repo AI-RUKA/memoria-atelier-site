@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f1e7">
+  <meta name="description" content="MEMORIA atelierの共有シールプロンプトを見てコピーできる小さな保管棚です。">
+  <title>共有シールプロンプト | MEMORIA atelier</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./guide-pages.css">
+</head>
+<body class="guide-page">
+  <header class="guide-header"><div class="guide-header-inner"><a class="back-home" href="./index.html">← MEMORIA atelierへ戻る</a></div></header>
+  <main class="guide-main">
+    <section class="guide-title">
+      <img class="guide-cookie" src="./assets/materials/memoria-cookie.webp" alt="" aria-hidden="true">
+      <p class="guide-kicker">SHARED PROMPTS</p>
+      <h1>共有シールプロンプト</h1>
+      <p>画像生成AIへ貼り付けて使える、MEMORIA用シールの小さな保管棚です。必要なところを書き換えて使ってね。</p>
+    </section>
+    <div class="prompt-grid">
+      <article class="prompt-card">
+        <div class="prompt-head"><p class="prompt-label">RESIN STICKER · 2 × 2</p><h2>ぷっくり樹脂シール／4個セット</h2></div>
+        <div class="prompt-body">
+          <pre class="prompt-text" id="prompt-resin">ぷっくり樹脂シールセットを作成してください。
+
+・1枚の正方形シートに4個、2列×2行
+・各シールの間隔を広く取り、重ねない
+・それぞれ異なる外形にする
+・透明感のある厚い樹脂で覆われた、ぷっくり立体シール
+・外周には幅のある無色透明な樹脂の縁
+・強いハイライト、内部の屈折、やわらかな外影
+・人物は成人の低頭身キャラクター
+・白フチ、白塗り、台紙、文字は入れない
+・背景は完全透過PNG
+・自動切り抜きしやすいよう、各シールを独立させる
+
+人物参考画像がある場合は、顔立ち・髪型・髪色・服装・雰囲気だけを自然に反映し、元画像の構図や背景はコピーしないでください。</pre>
+          <button class="primary-button copy-button" type="button" data-copy="prompt-resin">プロンプトをコピー</button>
+          <p class="copy-status" aria-live="polite"></p>
+        </div>
+      </article>
+    </div>
+    <p class="guide-note">生成AIやモデルによって仕上がりは変わります。参照画像を使う場合は、自分が利用する権利を持つ画像を使ってください。プロンプトはこれから少しずつ追加できます。</p>
+  </main>
+  <footer class="guide-footer"><div class="guide-footer-inner"><p>MEMORIA atelier — by H × RUKA</p></div></footer>
+  <script>
+    document.querySelectorAll("[data-copy]").forEach(function(button) {
+      button.addEventListener("click", async function() {
+        var text = document.getElementById(button.dataset.copy).textContent;
+        var status = button.parentElement.querySelector(".copy-status");
+        try {
+          await navigator.clipboard.writeText(text);
+          status.textContent = "コピーしました ♡";
+        } catch (error) {
+          status.textContent = "長押ししてコピーしてね";
+        }
+      });
+    });
+  </script>
+</body>
+</html>

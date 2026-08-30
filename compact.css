@@ -557,3 +557,73 @@ footer {
   .mini-menu { right: 9px; }
   .guide-tip { font-size: .64rem; }
 }
+
+
+/* Phone-first guide: keep the four essentials readable without making the page feel heavy. */
+@media (max-width: 480px) {
+  .compact-guide {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .guide-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .guide-card,
+  .guide-card:nth-child(1),
+  .guide-card:nth-child(2),
+  .guide-card:nth-child(3),
+  .guide-card:nth-child(4) {
+    display: grid;
+    grid-template-columns: minmax(118px, 42%) 1fr;
+    transform: none;
+  }
+
+  .guide-visual {
+    height: auto;
+    min-height: 132px;
+    border-right: 1px solid rgba(117,88,66,.11);
+    border-bottom: 0;
+  }
+
+  .guide-copy {
+    display: flex;
+    min-height: 0;
+    padding: 16px 14px;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .guide-copy h3 {
+    font-size: .86rem;
+    line-height: 1.45;
+  }
+
+  .guide-copy p {
+    font-size: .73rem;
+    line-height: 1.65;
+  }
+
+  .guide-tip {
+    margin-top: 20px;
+    font-size: .7rem;
+    line-height: 1.75;
+  }
+}
+
+@media (max-width: 360px) {
+  .guide-card,
+  .guide-card:nth-child(1),
+  .guide-card:nth-child(2),
+  .guide-card:nth-child(3),
+  .guide-card:nth-child(4) {
+    grid-template-columns: 112px 1fr;
+  }
+
+  .guide-copy {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}

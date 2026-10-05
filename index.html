@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f7f1e7">
+  <meta name="theme-color" content="#deeaeb">
   <meta name="description" content="MEMORIA atelierは、写真・文字・シール・手書きを自由に重ねてつくる、ブラウザで使えるデジタルジャーナルアプリです。AIと一緒につくるジャーナル体験を楽しめます。">
   <meta name="keywords" content="MEMORIA atelier, デジタルジャーナル, デジタルジャーナルアプリ, ブラウザジャーナル, digital journal, digital journaling, browser journal, AI assisted journal">
   <meta property="og:title" content="MEMORIA atelier | ブラウザで使えるデジタルジャーナルアプリ">
@@ -16,25 +16,33 @@
   <link rel="stylesheet" href="./compact.css">
   <link rel="stylesheet" href="./materials-ui.css">
   <link rel="stylesheet" href="./guide-pages.css">
-  <link rel="stylesheet" href="./astra-home.css">
+  <link rel="stylesheet" href="./origami-home.css">
 </head>
-<body class="astra">
-<a class="a-skip" href="#a-contents">目次へ</a>
-<main class="a-layout">
-<header class="a-intro">
-<img class="a-cookie" src="./assets/materials/memoria-cookie.webp" alt="" aria-hidden="true">
-<h1>MEMORIA <em>atelier</em></h1>
-<p class="a-description">写真・文字・シール・手書きを<br>自由に重ねて、自分だけの<br class="a-mobile">デジタルジャーナルを。</p>
-<a class="a-open" href="https://memoria-atelier-hxr.netlify.app/" target="_blank" rel="noopener noreferrer">MEMORIAをひらく <span aria-hidden="true">↗</span></a>
-<p class="a-small">無料・アカウント登録なし</p>
+<body class="origami">
+<a class="skip" href="#contents">目次へ</a>
+<svg width="0" height="0" aria-hidden="true" class="filter-defs"><defs>
+<filter id="paper-cutout" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  1 1 1 0 0"/><feComponentTransfer><feFuncA type="table" tableValues="0 1 1 1 1 1 1 1 1 1 1"/></feComponentTransfer></filter>
+</defs></svg>
+<main class="journal-home">
+<header class="intro">
+<div class="hero-art" role="img" aria-label="折り紙の本棚、花、手紙が広がるジャーナル"></div>
+<div class="intro-copy"><h1>MEMORIA <em>atelier</em></h1>
+<p class="description">写真・文字・シール・手書きを<br>自由に重ねて、自分だけの<br>デジタルジャーナルを。</p>
+<a class="open-app" href="https://memoria-atelier-hxr.netlify.app/" target="_blank" rel="noopener noreferrer"><svg class="button-art" viewBox="65 405 735 185" aria-hidden="true" focusable="false"><image href="./assets/origami/navigation.svg" width="864" height="1536" filter="url(#paper-cutout)"/></svg><span>MEMORIAをひらく <b aria-hidden="true">↗</b></span></a>
+<p class="small-note">無料・アカウント登録なし</p></div>
 </header>
-<section class="a-paper" id="a-contents" aria-labelledby="a-title">
-<img class="a-scrap" src="./assets/materials/transparent/botanical-paper.png" alt="" aria-hidden="true">
-<div class="a-paper-inner">
-<div class="a-heading"><span aria-hidden="true">Contents</span><h2 id="a-title">このアトリエの、ご案内。</h2></div>
-<details class="a-entry">
-<summary><span class="a-num">01</span><span><strong>はじめての方へ</strong><small>開き方と、最初の準備。</small></span><span class="a-arrow" aria-hidden="true">＋</span></summary>
-<div class="a-expanded">      <section class="section first-steps" id="start" aria-labelledby="start-title">
+<nav id="contents" class="contents" aria-label="このアトリエのご案内">
+<h2>このアトリエの、ご案内。</h2>
+<svg class="divider" viewBox="205 615 455 75" aria-hidden="true" focusable="false"><image href="./assets/origami/navigation.svg" width="864" height="1536" filter="url(#paper-cutout)"/></svg>
+<div class="menu-paper"><svg class="menu-art" viewBox="0 700 864 720" aria-hidden="true" focusable="false"><image href="./assets/origami/navigation.svg" width="864" height="1536" filter="url(#paper-cutout)"/></svg>
+<div class="menu-links">
+<a href="#first-guide" data-open="first-guide"><strong>はじめての方へ</strong><small>開き方と、最初の準備。</small></a>
+<a href="./security.html"><strong>保存と安心について</strong><small>大切な一冊を、残すために。</small></a>
+<a href="./sticker-prompts.html"><strong>シールのプロンプト棚</strong><small>コピーして、あなたのシールに。</small></a>
+<a href="#inside-guide" data-open="inside-guide"><strong>本のなかを、すこしだけ。</strong><small>本棚・ページづくり・プレビュー。</small></a>
+</div></div></nav>
+<div class="guide-pages">
+<details id="first-guide"><summary>はじめての方へ</summary><div class="guide-content">      <section class="section first-steps" id="start" aria-labelledby="start-title">
         <div class="paper-card compact-guide visual-guide">
           <p class="section-number">01</p>
           <p class="eyebrow">BEFORE OPENING</p>
@@ -65,13 +73,8 @@
         </div>
       </section>
 
-</div>
-</details>
-<a class="a-entry a-link" href="./security.html"><span class="a-num">02</span><span><strong>保存と安心について</strong><small>大切な一冊を、残すために。</small></span><span class="a-arrow" aria-hidden="true">↗</span></a>
-<a class="a-entry a-link" href="./sticker-prompts.html"><span class="a-num">03</span><span><strong>シールのプロンプト棚</strong><small>コピーして、あなたのシールに。</small></span><span class="a-arrow" aria-hidden="true">↗</span></a>
-<details class="a-entry">
-<summary><span class="a-num">04</span><span><strong>本のなかを、すこしだけ。</strong><small>本棚・ページづくり・プレビュー。</small></span><span class="a-arrow" aria-hidden="true">＋</span></summary>
-<div class="a-expanded">      <section class="section gallery material-gallery" aria-labelledby="gallery-title">
+</div></details>
+<details id="inside-guide"><summary>本のなかを、すこしだけ。</summary><div class="guide-content">      <section class="section gallery material-gallery" aria-labelledby="gallery-title">
         <div class="section-heading">
           <div><p class="section-number">02</p><p class="eyebrow">A PEEK INSIDE</p><h2 id="gallery-title">本のなかを、すこしだけ。</h2></div>
           <p class="gallery-note">ページを重ねるたび、あなたらしい一冊に。</p>
@@ -93,11 +96,14 @@
         </div>
       </section>
 
+</div></details>
 </div>
-</details>
-<p class="a-footnote">本や写真は、お使いのブラウザの端末内に保存されます。<br>ときどき、本棚のバックアップを。</p>
-</div>
-</section>
-<footer class="a-footer"><p>MEMORIA atelier <span>by H × RUKA</span></p><small>AIと一緒につくるジャーナル</small></footer>
+<p class="storage-note">本や写真は、お使いのブラウザの端末内に保存されます。<br>ときどき、本棚のバックアップを。</p>
+<footer class="journal-footer"><p>MEMORIA atelier <span>by H × RUKA</span></p><small>AIと一緒につくるジャーナル</small></footer>
 </main>
+<script>
+function openGuide(){const el=document.getElementById(location.hash.slice(1));if(el?.tagName==='DETAILS')el.open=true;}
+document.querySelectorAll('[data-open]').forEach(link=>link.addEventListener('click',()=>{document.getElementById(link.dataset.open).open=true;}));
+window.addEventListener('hashchange',openGuide);openGuide();
+</script>
 </body></html>

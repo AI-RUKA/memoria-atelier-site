@@ -1,0 +1,44 @@
+/* User-supplied origami artwork. Entrance page only. */
+.origami{margin:0;min-width:320px;background:#deeaeb;color:#365960;font-family:'Yu Gothic','Hiragino Kaku Gothic ProN',sans-serif}
+.origami *{box-sizing:border-box}
+.filter-defs{position:absolute;pointer-events:none}
+.journal-home{max-width:660px;margin:auto;background:#e4eeee;min-height:100vh;box-shadow:0 0 80px #577f8012;padding-bottom:24px}
+.intro{padding:0;text-align:center}
+.hero-art{width:100%;aspect-ratio:864/550;background:url('./assets/origami/journal.svg') center top/100% auto no-repeat}
+.intro-copy{padding:8px 20px 20px}
+.intro h1{font:normal clamp(29px,7vw,44px)/1.2 Georgia,serif;letter-spacing:.055em;color:#315660;margin:0}
+.intro h1 em{display:block;font:italic .65em/1.4 Georgia,serif;letter-spacing:.04em;color:#617d80}
+.description{font-size:14px;line-height:1.9;margin:16px 0;color:#48646a}
+.open-app{display:block;position:relative;width:min(100%,350px);aspect-ratio:735/185;margin:0 auto;color:#fffdf4;text-decoration:none;background:none;border:0;box-shadow:none}
+.button-art{display:block;width:100%;height:100%}
+.open-app>span{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:18px;font-size:16px;font-weight:600;text-shadow:0 1px 2px #244e5e}
+.open-app b{font-weight:400}.open-app:hover{filter:brightness(1.06)}
+.small-note{font-size:11px;margin:3px 0 0;color:#526d70}
+.contents{padding:0 14px;scroll-margin-top:20px}
+.contents h2{text-align:center;font-size:13px;font-weight:400;letter-spacing:.1em;margin:0 0 3px}
+.divider{display:block;width:52%;height:auto;margin:0 auto 10px;overflow:hidden}
+.menu-paper{position:relative;width:100%;aspect-ratio:864/720}
+.menu-art{display:block;width:100%;height:100%;pointer-events:none}
+.menu-links{position:absolute;left:7%;right:7%;top:7%;height:70%;display:grid;grid-template-rows:repeat(4,1fr)}
+.menu-links a{display:flex;flex-direction:column;justify-content:center;padding:0 9% 0 29%;text-align:left;color:#365960;text-decoration:none;border-radius:4px;min-width:0}
+.menu-links strong{font-family:'Yu Mincho','Hiragino Mincho ProN',serif;font-size:clamp(13px,3.4vw,20px);line-height:1.5;font-weight:600;white-space:normal}
+.menu-links small{font-size:clamp(9px,2.4vw,12px);line-height:1.5;margin-top:3px;color:#626e69}
+.menu-links a:hover{background:#538a8a0d}
+.origami :focus-visible{outline:2px solid #376c7a;outline-offset:3px}
+.guide-pages{margin:14px 25px 0}
+.guide-pages>details{background:#fcf8ee;border:1px solid #d5d5c5;margin:10px 0;scroll-margin-top:15px;border-radius:3px}
+.guide-pages>details>summary{padding:16px;color:#43656b;cursor:pointer;font-size:13px}
+.guide-content{padding:0 14px 15px}
+.guide-content .section{padding:0}.guide-content .paper-card{padding:12px;background:transparent;border:0;box-shadow:none}
+.guide-content .section-number,.guide-content .eyebrow,.guide-content .guide-visual{display:none}
+.guide-content h2{font-size:19px}.guide-content .guide-grid,.guide-content .screenshots{display:grid;grid-template-columns:1fr;gap:12px}
+.guide-content .guide-card{display:block;transform:none}.guide-content .guide-copy{padding:12px;min-height:0}
+.guide-content .guide-copy p,.guide-content .guide-tip{font-size:12px}
+.guide-content .primary-button{background:#557d83;color:white;border:0;box-shadow:none;font-size:13px}
+.guide-content .section-heading{display:block}.guide-content .gallery-note{font-size:12px}
+.storage-note{font-size:11px;line-height:1.9;text-align:center;padding:0 22px;margin:24px 0 0;color:#506b6f}
+.journal-footer{text-align:center;background:none;border:0;padding:24px 12px 0;color:#647c7d}
+.journal-footer p{font:12px Georgia,serif;margin:0 0 6px}.journal-footer span{font-size:10px;margin-left:8px}.journal-footer small{font-size:10px}
+.skip{position:fixed;top:0;left:10px;transform:translateY(-120%);padding:12px;background:white;z-index:10}.skip:focus{transform:none}
+@media(min-width:700px){.journal-home{margin:28px auto;border:1px solid #cfdddd}.intro-copy{padding-top:0}.hero-art{aspect-ratio:864/525}.contents{padding:0 28px}.description br:last-of-type{display:none}}
+@media(max-width:360px){.contents{padding:0 7px}.menu-links small{font-size:9px}.menu-links strong{font-size:12px}.intro-copy{padding-left:14px;padding-right:14px}}

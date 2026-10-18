@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#deeaeb">
+  <meta name="theme-color" content="#faf7ef">
   <meta name="description" content="MEMORIA atelierは、写真・文字・シール・手書きを自由に重ねてつくる、ブラウザで使えるデジタルジャーナルアプリです。AIと一緒につくるジャーナル体験を楽しめます。">
   <meta name="keywords" content="MEMORIA atelier, デジタルジャーナル, デジタルジャーナルアプリ, ブラウザジャーナル, digital journal, digital journaling, browser journal, AI assisted journal">
   <meta property="og:title" content="MEMORIA atelier | ブラウザで使えるデジタルジャーナルアプリ">
@@ -21,7 +21,18 @@
 <body class="origami">
 <a class="skip" href="#contents">目次へ</a>
 <svg width="0" height="0" aria-hidden="true" class="filter-defs"><defs>
-<filter id="paper-cutout" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  1 1 1 0 0"/><feComponentTransfer><feFuncA type="table" tableValues="0 1 1 1 1 1 1 1 1 1 1"/></feComponentTransfer></filter>
+<!-- Smooth only the matte; retain the paper texture in the colour layer. -->
+<filter id="paper-cutout" color-interpolation-filters="sRGB">
+  <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  1.4 1.4 1.4 0 -0.22" result="matte"/>
+  <feGaussianBlur in="matte" stdDeviation="0.65" result="soft-matte"/>
+  <feColorMatrix in="SourceGraphic" type="saturate" values="0.52"/>
+  <feComponentTransfer result="milk-blue">
+    <feFuncR type="linear" slope="0.68" intercept="0.315"/>
+    <feFuncG type="linear" slope="0.68" intercept="0.310"/>
+    <feFuncB type="linear" slope="0.68" intercept="0.300"/>
+  </feComponentTransfer>
+  <feComposite in="milk-blue" in2="soft-matte" operator="in"/>
+</filter>
 </defs></svg>
 <main class="journal-home">
 <header class="intro">

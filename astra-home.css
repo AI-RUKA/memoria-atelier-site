@@ -1,0 +1,102 @@
+/* Astra paper contents — entrance only; other pages retain their styles. */
+.astra{margin:0;color:#514b43;background:#f3f0e8;font-family:"Yu Gothic","Hiragino Kaku Gothic ProN",sans-serif;min-width:320px}
+.astra *{box-sizing:border-box}
+.a-layout{max-width:1120px;margin:auto;padding:80px 60px 24px;display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;align-items:center}
+.a-intro{text-align:left;padding:30px 0}
+.a-cookie{display:block;width:160px;height:auto;filter:drop-shadow(0 7px 8px #67533b18);margin:0 0 27px}
+.a-intro h1{margin:0;color:#514b43;font:normal clamp(30px,4vw,43px)/1.2 Georgia,serif;letter-spacing:.035em}
+.a-intro h1 em{display:block;font:italic 25px/1.6 Georgia,serif;letter-spacing:.015em;color:#89816f}
+.a-description{margin:26px 0;color:#6c655b;font-size:14px;line-height:2.15}
+.a-open{display:inline-flex;gap:34px;align-items:center;min-height:52px;padding:12px 22px;background:#6c7968;color:#fffdf7;border:1px solid #5e6c59;text-decoration:none;border-radius:3px;font-size:13px;letter-spacing:.04em;box-shadow:0 5px 10px #3e47300e}
+.a-open:hover{background:#53614f}
+.a-small{font-size:10px;color:#857e72;margin:13px 0}
+.a-paper{position:relative;isolation:isolate;background:#fcfaf3;border:1px solid #e5dfd1;box-shadow:0 18px 36px #665a3710,5px 6px 0 -1px #ece7da,5px 6px 0 0 #ded7c7;scroll-margin-top:20px}
+.a-scrap{position:absolute;width:150px;height:160px;object-fit:contain;top:-45px;right:-23px;transform:rotate(12deg);z-index:-1;opacity:.85;pointer-events:none}
+.a-paper-inner{padding:42px 32px 26px}
+.a-heading{margin-bottom:24px}
+.a-heading>span{font:italic 33px/1.2 Georgia,serif;color:#99886c}
+.a-heading h2{font-size:11px;font-weight:400;margin:12px 0 0;letter-spacing:.06em;color:#81796c}
+.a-entry{border-top:1px solid #e5dfd2}
+.a-link,.a-entry>summary{display:grid;grid-template-columns:25px minmax(0,1fr) 16px;gap:10px;align-items:center;padding:20px 0;color:inherit;text-decoration:none;cursor:pointer;list-style:none}
+.a-entry>summary::-webkit-details-marker{display:none}
+.a-num{font:italic 12px Georgia,serif;color:#ab9e86;align-self:start;padding-top:4px}
+.a-entry strong{display:block;font-weight:500;font-size:14px;line-height:1.6}
+.a-entry small{display:block;font-size:10px;color:#898174;margin-top:4px;line-height:1.7}
+.a-arrow{color:#9c927f;font-size:15px;transition:transform .2s}
+.a-entry[open]>summary .a-arrow{transform:rotate(45deg)}
+.a-link:hover strong,.a-entry>summary:hover strong{color:#75866d}
+.a-footnote{font-size:10px;line-height:1.9;color:#847d70;border-top:1px solid #e5dfd2;padding-top:20px;margin:0}
+.a-footer{grid-column:1/-1;border:0;padding:26px 0 0;text-align:left}
+.a-footer p{font:12px Georgia,serif;color:#938975;margin:0}
+.a-footer span{margin-left:12px;font-size:10px}
+.a-footer>small{font-size:9px;color:#aaa08e}
+.a-expanded{padding-bottom:20px}
+.a-expanded .section{padding:12px 0}
+.a-expanded .paper-card{padding:12px;background:none;box-shadow:none;border:0}
+.a-expanded .section-number,.a-expanded .eyebrow,.a-expanded .guide-lead,.a-expanded .section-heading{display:none}
+.a-expanded h2{font-size:18px}
+.a-expanded .guide-grid{grid-template-columns:1fr;gap:12px}
+.a-expanded .guide-card{display:block;transform:none}
+.a-expanded .guide-visual{display:none}
+.a-expanded .guide-copy{min-height:0;padding:14px}
+.a-expanded .guide-copy p{font-size:12px}
+.a-expanded .guide-tip{font-size:11px}
+.a-expanded .screenshots{grid-template-columns:1fr}
+.a-expanded .placeholder-art,.a-expanded .screenshot-tall .placeholder-art{min-height:180px}
+.a-expanded .primary-button{font-size:12px;min-height:48px}
+.a-mobile{display:none}
+.a-skip{position:fixed;top:0;left:10px;transform:translateY(-120%);z-index:10;padding:12px;background:#fff}
+.a-skip:focus{transform:none}
+.astra :focus-visible{outline:2px solid #6c7968;outline-offset:5px}
+@media(max-width:760px){
+.a-layout{display:block;padding:32px 24px 24px;max-width:470px}
+.a-intro{text-align:center;padding:8px 0 35px}
+.a-cookie{width:105px;margin:0 auto 17px}
+.a-intro h1{font-size:30px}
+.a-intro h1 em{display:inline;font-size:22px}
+.a-description{font-size:12px;line-height:1.95;margin:19px 0}
+.a-open{min-height:49px}
+.a-small{margin-bottom:0}
+.a-paper-inner{padding:28px 22px 22px}
+.a-heading{margin-bottom:17px}
+.a-heading>span{font-size:29px}
+.a-link,.a-entry>summary{padding:17px 0}
+.a-entry strong{font-size:13px}
+.a-scrap{width:100px;height:120px;top:-29px;right:-12px}
+.a-footer{text-align:center;padding-top:35px}
+}
+@media(prefers-reduced-motion:reduce){.astra *{scroll-behavior:auto;transition:none}}
+
+/* Journal refinement: existing paper assets, quiet layers and blue-grey ink. */
+.astra{background-color:#eae6dc;background-image:linear-gradient(90deg,#b9a88509 1px,transparent 1px),linear-gradient(#b9a88509 1px,transparent 1px);background-size:7px 7px;color:#4e5659}
+.a-intro{position:relative;isolation:isolate}
+.a-intro::before{content:"";position:absolute;z-index:-1;pointer-events:none;top:6px;left:-26px;width:230px;height:150px;background:url('./assets/materials/transparent/translucent-note-floral.png') center/contain no-repeat;opacity:.65;transform:rotate(-9deg)}
+.a-intro h1{color:#4c5d66}
+.a-intro h1 em{color:#8c8274}
+.a-cookie{transform:rotate(-4deg)}
+.a-paper{background-color:#fbf7ed;background-image:linear-gradient(90deg,#a3916e0c 1px,transparent 1px),linear-gradient(#a3916e0c 1px,transparent 1px);background-size:22px 22px;border-color:#d8cebd;box-shadow:0 18px 36px #665a3714,4px 5px 0 #e9e2d3,5px 6px 0 #cfc4b2}
+.a-paper::before{content:"";position:absolute;z-index:-1;inset:8px -8px -9px 7px;background:#e0e6e2;border:1px solid #cbd3cd;transform:rotate(-1.2deg);pointer-events:none}
+.a-scrap{z-index:1;width:190px;height:auto;top:-16px;right:22px;transform:rotate(4deg);opacity:.9;filter:drop-shadow(0 2px 1px #705b3b16)}
+.a-paper-inner{position:relative;padding-top:49px}
+.a-heading>span{color:#596e78;font-size:37px;letter-spacing:-.04em}
+.a-heading h2{color:#736d63}
+.a-entry{border-color:#b8afa066}
+.a-entry strong{font-family:"Yu Mincho","Hiragino Mincho ProN",serif;color:#4d5960;letter-spacing:.025em}
+.a-num{color:#967659;font-size:15px}
+.a-entry small{color:#776e62;font-size:11px}
+.a-open{background:#78816b;border-color:#68735c;border-radius:2px 5px 3px 2px;box-shadow:2px 3px 0 #d2c7b1}
+.a-footnote{margin-top:13px;padding:18px 13px 9px;border:0;background:#f0e9dc9c;font-size:11px;transform:rotate(-.5deg)}
+.a-footer p{color:#77705f}
+@media(max-width:760px){
+ .a-layout{padding-top:26px}
+ .a-intro{padding-bottom:44px}
+ .a-intro::before{top:-3px;left:calc(50% - 98px);width:175px;height:105px}
+ .a-paper-inner{padding-top:37px}
+ .a-scrap{width:155px;top:-14px;right:14px}
+ .a-heading>span{font-size:32px}
+ .a-entry strong{font-size:14px}
+ .a-description{font-size:13px}
+}
+
+/* Keep the blue backing sheet behind the cream writing surface. */
+.a-paper-inner{background-color:#fbf7ed;background-image:linear-gradient(90deg,#a3916e0c 1px,transparent 1px),linear-gradient(#a3916e0c 1px,transparent 1px);background-size:22px 22px}

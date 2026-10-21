@@ -15,13 +15,15 @@
   const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
   let index = Math.max(0, panels.findIndex(panel => '#' + panel.id === location.hash));
   let busy = false;
-  let quietMotion = systemMotion.matches;
+  let quietMotion = false;
   let touchStart = null;
 
   function applyMotion() {
-    document.body.classList.toggle('reduce-motion', quietMotion);
-    motionToggle.setAttribute('aria-pressed', String(quietMotion));
-    motionToggle.textContent = quietMotion ? '動き：ひかえめ' : '動きをひかえめに';
+    const reduced = quietMotion || systemMotion.matches;
+    document.body.classList.toggle('reduce-motion', reduced);
+    motionToggle.setAttribute('aria-pressed', String(reduced));
+    motionToggle.disabled = systemMotion.matches;
+    motionToggle.textContent = systemMotion.matches ? '動き：端末の設定に合わせる' : reduced ? '動き：ひかえめ' : '動きをひかえめに';
   }
 
   function showPage(nextIndex, announce = true) {
@@ -102,7 +104,7 @@
   }, {passive:true});
   scene.addEventListener('touchcancel', () => { touchStart = null; }, {passive:true});
   motionToggle.addEventListener('click', () => { quietMotion = !quietMotion; applyMotion(); });
-  systemMotion.addEventListener('change', event => { quietMotion = event.matches; applyMotion(); });
+  systemMotion.addEventListener('change', applyMotion);
   window.addEventListener('hashchange', () => {
     const target = panels.findIndex(panel => '#' + panel.id === location.hash);
     if (target >= 0 && target !== index) turnTo(target, target > index ? 1 : -1);

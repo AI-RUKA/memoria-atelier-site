@@ -23,3 +23,9 @@ This is for visual review. Do not merge to main before user approval.
 - Previous/next buttons, page dots, keyboard wraparound and manual reduced-motion toggle exercised. Panel heights remain stable across the three pages at the inspected mobile sizes.
 - Touch swipe handlers are implemented; real-device swipe behavior and iOS Safari still need user review.
 - Existing entrance files are byte-for-byte unchanged from `design/origami-entrance` at `7a017dbb65a00e2d99b657ae2ee8c7593c91fad9`.
+
+## Glass-panel refinement
+
+The floating information pane now uses rounded reflective edges, a translucent surface, restrained blue light and a soft 0.88-second emergence after each page turn. Text and pictures stay at full opacity when settled. The book and all guidance content remain unchanged. This treatment is CSS-only: no additional image assets, packages or runtime services.
+
+Verified with a local Chromium preview at 320px and 390px CSS viewport widths: no horizontal overflow, all three panels readable, navigation unlocks after the updated transition, and manual reduced motion skips the animation. System reduced motion remains respected. Real-device touch and Safari still need user review.

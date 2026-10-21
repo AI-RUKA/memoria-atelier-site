@@ -57,11 +57,11 @@
         showPage(nextIndex);
       } else {
         scene.classList.add(direction > 0 ? 'turn-forward' : 'turn-back', 'leaving');
-        await wait(270);
+        await wait(220);
         showPage(nextIndex);
         scene.classList.remove('leaving');
         scene.classList.add('arriving');
-        await wait(520);
+        await wait(900);
       }
       // Page changes stay within this prototype and never create a new history entry.
       history.replaceState(null, '', '#' + panels[index].id);

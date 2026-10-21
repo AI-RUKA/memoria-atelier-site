@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f3eb">
+  <meta name="robots" content="noindex, nofollow">
+  <title>浮かぶ本のアトリエ | MEMORIA atelier</title>
+  <meta name="description" content="本をめくると、案内がふわっと浮かび上がるMEMORIAの小さな展示室。">
+  <link rel="stylesheet" href="./floating-journal.css">
+  <script src="./floating-journal.js" defer></script>
+</head>
+<body>
+  <header class="room-header">
+    <a class="back-link" href="./index.html"><span aria-hidden="true">←</span> 入口へ</a>
+    <p>MEMORIA <em>atelier</em></p>
+    <button class="motion-toggle" type="button" aria-pressed="false" hidden>動きをひかえめに</button>
+  </header>
+  <main class="exhibit">
+    <p class="room-caption">本からひらく、小さなアトリエ。</p>
+    <div class="scene" id="scene">
+      <div class="floating-stack">
+        <div class="echo-sheet echo-far" aria-hidden="true"></div>
+        <div class="echo-sheet echo-near" aria-hidden="true"></div>
+        <div class="floating-window" id="display" aria-busy="false">
+          <span class="corner corner-tl" aria-hidden="true"></span><span class="corner corner-tr" aria-hidden="true"></span>
+          <span class="corner corner-bl" aria-hidden="true"></span><span class="corner corner-br" aria-hidden="true"></span>
+          <section class="panel welcome-panel" id="welcome" aria-labelledby="welcome-title">
+            <p class="chapter">01 <span>WELCOME</span></p>
+            <h1 id="welcome-title">MEMORIA <em>atelier</em></h1>
+            <p class="intro-line">思い出を、一冊に。</p>
+            <div class="paper-world" role="img" aria-label="紙の本棚や花、手紙が広がる折り紙のジャーナル"></div>
+            <p class="panel-copy">写真も、ことばも、好きなシールも。<br>自由に重ねる、あなたのジャーナル。</p>
+            <a class="ink-link" href="https://memoria-atelier-hxr.netlify.app/" target="_blank" rel="noopener noreferrer">MEMORIAをひらく <span aria-hidden="true">↗</span></a>
+            <p class="quiet-note">無料・アカウント登録なし</p>
+          </section>
+          <section class="panel create-panel" id="create" aria-labelledby="create-title" hidden>
+            <p class="chapter">02 <span>YOUR LITTLE WORLD</span></p>
+            <h2 id="create-title">好きなものを、<br class="mobile-break">一枚に。</h2>
+            <div class="little-collage" role="img" aria-label="紙に写真風の折り紙イラストとメモ、花の飾りを重ねたページづくりのイメージ">
+              <div class="collage-photo"><div class="collage-photo-art"></div><span>a little memory</span></div>
+              <div class="collage-note"><span>今日のかけら</span><i></i><i></i><i></i><em>好き、を集めて。</em></div>
+              <img class="collage-flower" src="./assets/materials/transparent/flower-brooch.png" width="140" height="140" alt="">
+              <span class="paper-tape" aria-hidden="true"></span>
+            </div>
+            <p class="example-caption">ページづくりのイメージ</p>
+            <p class="panel-copy">写真・文字・シール・手書きを重ねて、<br>好きな場所に、好きな大きさで。</p>
+            <a class="ink-link" href="./sticker-prompts.html">シールのプロンプト棚へ <span aria-hidden="true">→</span></a>
+          </section>
+          <section class="panel save-panel" id="save" aria-labelledby="save-title" hidden>
+            <p class="chapter">03 <span>KEEP YOUR MEMORIES</span></p>
+            <h2 id="save-title">大切な一冊を、<br>これからも。</h2>
+            <div class="keepsake" aria-hidden="true"><div class="envelope-back"></div><div class="letter"><span>dear memories,</span><i></i><i></i><i></i></div><div class="envelope-front"></div><span class="seal">M</span></div>
+            <p class="panel-copy">本や写真は、使っているブラウザの<br>端末内に保存されます。</p>
+            <p class="backup-note">ときどき、本棚をバックアップ。<br>大切な一冊の、もうひとつの置き場所に。</p>
+            <a class="ink-link" href="./security.html">保存と安心について <span aria-hidden="true">→</span></a>
+          </section>
+        </div>
+      </div>
+      <div class="book-base" aria-hidden="true">
+        <div class="projection"><i></i><i></i><i></i><b></b></div>
+        <img class="book-image" src="./assets/floating-journal/open-book.webp" width="1536" height="1024" alt="" fetchpriority="high">
+        <div class="book-inscription"><span>MEMORIA</span><em>the little things, kept.</em></div>
+        <div class="book-page-number">— <span id="book-number">01</span> —</div>
+        <svg class="turning-leaf" viewBox="0 0 300 260" preserveAspectRatio="none"><defs><linearGradient id="leaf-paper"><stop stop-color="#c8ad86"/><stop offset=".12" stop-color="#f2e6d1"/><stop offset=".55" stop-color="#fff9ed"/><stop offset="1" stop-color="#dfc9a5"/></linearGradient><linearGradient id="leaf-fold"><stop stop-color="#937a57" stop-opacity=".3"/><stop offset=".18" stop-color="#d8bd95" stop-opacity="0"/><stop offset="1" stop-color="#80694a" stop-opacity=".1"/></linearGradient></defs><path d="M0 33 C42 0 85 0 126 4 L268 19 L300 230 C167 217 83 194 0 260Z" fill="url(#leaf-paper)" stroke="#e2cfb0"/><path d="M0 33 C42 0 85 0 126 4 L268 19 L300 230 C167 217 83 194 0 260Z" fill="url(#leaf-fold)"/></svg>
+        <span class="spine-light"></span>
+      </div>
+    </div>
+    <nav class="page-controls" aria-label="本をめくる" hidden>
+      <button class="turn-button" id="previous" type="button" aria-label="前のページへ"><span aria-hidden="true">←</span></button>
+      <div class="page-index"><p id="page-count">01 <span>/ 03</span></p><div class="page-dots"><button type="button" data-page="0" aria-label="1ページ目：ようこそ" aria-current="page"></button><button type="button" data-page="1" aria-label="2ページ目：ページづくり"></button><button type="button" data-page="2" aria-label="3ページ目：保存の案内"></button></div></div>
+      <button class="turn-button" id="next" type="button" aria-label="次のページへ"><span aria-hidden="true">→</span></button>
+    </nav>
+    <p class="gesture-hint" hidden>左右にそっとなぞるか、矢印でめくってね。</p>
+    <p class="sr-only" role="status" aria-live="polite" aria-atomic="true" id="page-announcement"></p>
+    <noscript><p class="no-script-links"><a href="./index.html">入口のご案内へ</a> · <a href="./security.html">保存と安心について</a></p></noscript>
+  </main>
+  <footer class="room-footer">小さな思い出に、ひとつの居場所を。<span>MEMORIA atelier · H × RUKA</span></footer>
+</body>
+</html>

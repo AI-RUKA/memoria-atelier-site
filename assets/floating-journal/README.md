@@ -15,3 +15,11 @@ Use case: precise-object-edit. Asset type: isolated open-book base for the MEMOR
 Three pages: welcome, page-making illustration, and saving guidance. Navigate using buttons, page dots, left/right arrow keys or horizontal touch swipes. Vertical scrolling is preserved. The operating system's reduced-motion preference is respected; a page control also reduces motion. No automatic carousel or looping animation.
 
 This is for visual review. Do not merge to main before user approval.
+
+## Verification
+
+- JavaScript syntax and relative asset/link paths checked.
+- Desktop and 320px/390px mobile review frames inspected in Chromium; mobile horizontal overflow corrected.
+- Previous/next buttons, page dots, keyboard wraparound and manual reduced-motion toggle exercised. Panel heights remain stable across the three pages at the inspected mobile sizes.
+- Touch swipe handlers are implemented; real-device swipe behavior and iOS Safari still need user review.
+- Existing entrance files are byte-for-byte unchanged from `design/origami-entrance` at `7a017dbb65a00e2d99b657ae2ee8c7593c91fad9`.

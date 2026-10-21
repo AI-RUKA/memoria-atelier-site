@@ -19,9 +19,39 @@
   <main class="exhibit">
     <p class="room-caption">本からひらく、小さなアトリエ。</p>
     <div class="scene" id="scene">
+      <svg class="projector" id="projector" aria-hidden="true" focusable="false" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="projection-air" x1="0" y1="0" x2="0" y2="1">
+            <stop stop-color="#b9e7f0" stop-opacity="0"/>
+            <stop offset=".55" stop-color="#8dcbdc" stop-opacity=".06"/>
+            <stop offset=".86" stop-color="#79c8df" stop-opacity=".22"/>
+            <stop offset="1" stop-color="#b4edfa" stop-opacity=".7"/>
+          </linearGradient>
+          <linearGradient id="projection-ray" x1="0" y1="0" x2="0" y2="1">
+            <stop stop-color="#87c8dc" stop-opacity="0"/>
+            <stop offset=".67" stop-color="#6dbdd4" stop-opacity=".2"/>
+            <stop offset="1" stop-color="#f4ffff" stop-opacity=".95"/>
+          </linearGradient>
+          <radialGradient id="projection-glow">
+            <stop stop-color="#ffffff" stop-opacity=".95"/>
+            <stop offset=".35" stop-color="#c9f5ff" stop-opacity=".8"/>
+            <stop offset="1" stop-color="#81cfe6" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <g class="projector-beam">
+          <path id="beam-volume" fill="url(#projection-air)"/>
+          <path id="beam-left" class="beam-ray"/>
+          <path id="beam-center" class="beam-ray beam-center"/>
+          <path id="beam-right" class="beam-ray"/>
+        </g>
+        <g class="projector-source">
+          <ellipse id="source-halo" fill="url(#projection-glow)"/>
+          <ellipse id="source-ring" class="source-ring"/>
+          <path id="source-spine" class="source-spine"/>
+          <path id="source-core" class="source-core"/>
+        </g>
+      </svg>
       <div class="floating-stack">
-        <div class="echo-sheet echo-far" aria-hidden="true"></div>
-        <div class="echo-sheet echo-near" aria-hidden="true"></div>
         <div class="floating-window" id="display" aria-busy="false">
           <span class="corner corner-tl" aria-hidden="true"></span><span class="corner corner-tr" aria-hidden="true"></span>
           <span class="corner corner-bl" aria-hidden="true"></span><span class="corner corner-br" aria-hidden="true"></span>
@@ -58,12 +88,10 @@
         </div>
       </div>
       <div class="book-base" aria-hidden="true">
-        <div class="projection"><i></i><i></i><i></i><b></b></div>
         <img class="book-image" src="./assets/floating-journal/open-book.webp" width="1536" height="1024" alt="" fetchpriority="high">
         <div class="book-inscription"><span>MEMORIA</span><em>the little things, kept.</em></div>
         <div class="book-page-number">— <span id="book-number">01</span> —</div>
         <svg class="turning-leaf" viewBox="0 0 300 260" preserveAspectRatio="none"><defs><linearGradient id="leaf-paper"><stop stop-color="#c8ad86"/><stop offset=".12" stop-color="#f2e6d1"/><stop offset=".55" stop-color="#fff9ed"/><stop offset="1" stop-color="#dfc9a5"/></linearGradient><linearGradient id="leaf-fold"><stop stop-color="#937a57" stop-opacity=".3"/><stop offset=".18" stop-color="#d8bd95" stop-opacity="0"/><stop offset="1" stop-color="#80694a" stop-opacity=".1"/></linearGradient></defs><path d="M0 33 C42 0 85 0 126 4 L268 19 L300 230 C167 217 83 194 0 260Z" fill="url(#leaf-paper)" stroke="#e2cfb0"/><path d="M0 33 C42 0 85 0 126 4 L268 19 L300 230 C167 217 83 194 0 260Z" fill="url(#leaf-fold)"/></svg>
-        <span class="spine-light"></span>
       </div>
     </div>
     <nav class="page-controls" aria-label="本をめくる" hidden>

@@ -4,7 +4,7 @@ This separate prototype lives at `floating-journal.html`. The existing entrance 
 
 `open-book.webp` is a 1536 × 1024 RGBA image (WebP quality 93), edited from the floating-book concept image approved in this conversation using the built-in image generation tool. The generated PNG is retained separately; only encoding was changed for the website. The existing materials folder and origami artwork provide the other visuals. The collage is an illustrative composition, not an app screenshot.
 
-The prototype uses HTML text and links, CSS transitions and a single lightweight SVG page-turn overlay. The book itself is a static raster image, not a fully simulated 3D book. No runtime dependencies, analytics, storage, or external scripts were added. `noindex` keeps this experimental page out of search indexing.
+The prototype uses HTML text and links, CSS transitions, and lightweight SVG page-turn and projection overlays. The book itself is a static raster image, not a fully simulated 3D book. No runtime dependencies, analytics, storage, or external scripts were added. `noindex` keeps this experimental page out of search indexing.
 
 ## Book asset edit prompt
 
@@ -24,8 +24,10 @@ This is for visual review. Do not merge to main before user approval.
 - Touch swipe handlers are implemented; real-device swipe behavior and iOS Safari still need user review.
 - Existing entrance files are byte-for-byte unchanged from `design/origami-entrance` at `7a017dbb65a00e2d99b657ae2ee8c7593c91fad9`.
 
-## Glass-panel refinement
+## Projection refinement
 
-The floating information pane now uses rounded reflective edges, a translucent surface, restrained blue light and a soft 0.88-second emergence after each page turn. Text and pictures stay at full opacity when settled. The book and all guidance content remain unchanged. This treatment is CSS-only: no additional image assets, packages or runtime services.
+The glass treatment now reads as a hologram projected from the book: a light source follows the gutter, a soft fan of light connects it to the pane, and the pane's lower border fades into that light. The book sits closer to the information, and the separate stacked glass sheets are removed. On entry and each page turn, the pane grows upward from the light source; the page-turn emergence lasts 1.08 seconds. Fine static scan lines suggest a projection without making the text or pictures translucent. There is no looping movement.
 
-Verified with a local Chromium preview at 320px and 390px CSS viewport widths: no horizontal overflow, all three panels readable, navigation unlocks after the updated transition, and manual reduced motion skips the animation. System reduced motion remains respected. Real-device touch and Safari still need user review.
+The source position and animation origin use untransformed layout coordinates, updated on page changes and resizing, so the beam remains attached to the book. All guidance, links, and existing artwork are retained. No new image assets, packages, or services are needed.
+
+Verified in a local Chromium preview at desktop, 320px, and 390px CSS viewport widths: all three panels remain readable, no mobile horizontal overflow, buttons and page dots work, controls unlock after the updated animation, and the light source stays aligned with the gutter. Manual reduced motion disables the pane and beam animations; system reduced-motion styles remain in place. Real-device touch and Safari still need user review.

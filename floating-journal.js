@@ -10,6 +10,9 @@
   const motionToggle = document.querySelector('.motion-toggle');
   const controls = document.querySelector('.page-controls');
   const hint = document.querySelector('.gesture-hint');
+  const stack = document.querySelector('.floating-stack');
+  const book = document.querySelector('.book-base');
+  const projector = document.getElementById('projector');
   const systemMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const names = ['ようこそ', 'ページづくり', '保存の案内'];
   const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
@@ -17,6 +20,34 @@
   let busy = false;
   let quietMotion = false;
   let touchStart = null;
+
+  // Use layout coordinates so the light stays attached to the book during animation,
+  // resizing, text zoom and page changes. Transformed screen bounds would drift.
+  function alignProjection() {
+    const sourceX = book.offsetLeft + book.offsetWidth * .5;
+    const sourceY = book.offsetTop + book.offsetHeight * .48;
+    const left = stack.offsetLeft + 12;
+    const right = stack.offsetLeft + stack.offsetWidth - 12;
+    const top = stack.offsetTop + 32;
+    const bottom = stack.offsetTop + display.offsetHeight;
+    const set = (id, attrs) => {
+      const node = document.getElementById(id);
+      Object.entries(attrs).forEach(([key, value]) => node.setAttribute(key, String(value)));
+    };
+    projector.setAttribute('viewBox', `0 0 ${scene.clientWidth} ${scene.clientHeight}`);
+    projector.style.setProperty('--source-x', sourceX + 'px');
+    projector.style.setProperty('--source-y', sourceY + 'px');
+    display.style.setProperty('--source-gap', Math.max(0, sourceY - bottom) + 'px');
+    set('beam-volume', {d:`M ${left} ${top} L ${right} ${top} L ${sourceX + 5} ${sourceY} L ${sourceX - 5} ${sourceY} Z`});
+    set('beam-left', {d:`M ${left} ${top} L ${sourceX} ${sourceY}`});
+    set('beam-center', {d:`M ${sourceX} ${top + 80} L ${sourceX} ${sourceY}`});
+    set('beam-right', {d:`M ${right} ${top} L ${sourceX} ${sourceY}`});
+    set('source-halo', {cx:sourceX, cy:sourceY, rx:book.offsetWidth * .18, ry:book.offsetHeight * .14});
+    set('source-ring', {cx:sourceX, cy:sourceY, rx:book.offsetWidth * .115, ry:book.offsetHeight * .043});
+    const halfSpine = book.offsetHeight * .19;
+    set('source-spine', {d:`M ${sourceX} ${sourceY - halfSpine} L ${sourceX} ${sourceY + halfSpine}`});
+    set('source-core', {d:`M ${sourceX} ${sourceY - halfSpine * .8} L ${sourceX} ${sourceY + halfSpine * .8}`});
+  }
 
   function applyMotion() {
     const reduced = quietMotion || systemMotion.matches;
@@ -39,12 +70,14 @@
     total.textContent = '/ 03';
     count.append(total);
     bookNumber.textContent = number;
+    alignProjection();
     if (announce) announcement.textContent = `${index + 1} / 3 ページ：${names[index]}`;
   }
 
   async function turnTo(target, direction) {
     const nextIndex = (target + panels.length) % panels.length;
     if (busy || nextIndex === index) return;
+    scene.classList.remove('projector-starting');
     busy = true;
     display.setAttribute('aria-busy', 'true');
     controls.querySelectorAll('button').forEach(button => button.setAttribute('aria-disabled', 'true'));
@@ -61,7 +94,7 @@
         showPage(nextIndex);
         scene.classList.remove('leaving');
         scene.classList.add('arriving');
-        await wait(900);
+        await wait(1100);
       }
       // Page changes stay within this prototype and never create a new history entry.
       history.replaceState(null, '', '#' + panels[index].id);
@@ -114,4 +147,13 @@
   motionToggle.hidden = false;
   applyMotion();
   showPage(index, false);
+  if ('ResizeObserver' in window) {
+    const layoutObserver = new ResizeObserver(alignProjection);
+    layoutObserver.observe(scene);
+    layoutObserver.observe(display);
+  } else {
+    window.addEventListener('resize', alignProjection);
+  }
+  scene.classList.add('projector-starting');
+  setTimeout(() => scene.classList.remove('projector-starting'), 1450);
 })();

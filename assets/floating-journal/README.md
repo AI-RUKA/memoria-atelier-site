@@ -26,8 +26,12 @@ This is for visual review. Do not merge to main before user approval.
 
 ## Projection refinement
 
-The treatment now reads as a frameless hologram projected from the book: a light source follows the gutter, and a soft fan of light connects it to the information. The rectangular outline and corner marks are hidden; the remaining translucent glow and fine static scan lines fade in every direction without making the text or pictures translucent. The book sits closer to the information, and the separate stacked glass sheets are removed. On entry and each page turn, the information grows upward from the light source; the page-turn emergence lasts 1.08 seconds. There is no looping movement.
+The treatment now reads as a frameless hologram projected from the book: a light source follows the gutter, and a soft fan of light connects it to the information. The rectangular outline and corner marks are hidden; the remaining translucent glow and fine static scan lines fade in every direction without making the text or pictures translucent. The book sits closer to the information, and the separate stacked glass sheets are removed. There is no looping movement.
+
+On entry and each page turn, a single soft light band travels upward from the book in 1.2 seconds. Each piece of information reveals from the bottom as the band reaches its layout position, then settles into place; controls unlock after the 1.46-second entrance. Illustrations sit closer to the viewer in CSS perspective and move farther than the text during the entrance. The warm palette, frameless silhouette, existing artwork and guidance remain intact. Text is fully opaque and unclipped once the entrance finishes. Reduced motion skips both the sweep and the layered reveal.
 
 The source position and animation origin use untransformed layout coordinates, updated on page changes and resizing, so the beam remains attached to the book. All guidance, links, and existing artwork are retained. No new image assets, packages, or services are needed.
 
 Verified in a local Chromium preview at desktop, 320px, and 390px CSS viewport widths: all three panels remain readable, no mobile horizontal overflow, buttons and page dots work, controls unlock after the updated animation, and the light source stays aligned with the gutter. Manual reduced motion disables the pane and beam animations; system reduced-motion styles remain in place. Real-device touch and Safari still need user review.
+
+Depth/sweep review: checked the active sweep and layer animation styles during arrival, full-opacity unclipped content after arrival, restored controls, and immediate readable content with no sweep under manual reduced motion. Mobile widths remain free of horizontal overflow.

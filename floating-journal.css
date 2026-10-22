@@ -52,7 +52,34 @@
   -webkit-mask-image: radial-gradient(ellipse at 50% 50%, #0009, transparent 72%);
 }
 .floating-window .corner { display: none; }
-.panel { position: relative; z-index: 1; }
+.panel {
+  position: relative;
+  z-index: 1;
+  perspective: 1100px;
+  perspective-origin: 50% 46%;
+  transform-style: preserve-3d;
+}
+.panel > * {
+  --layer-depth: 0px;
+  --layer-angle: 0deg;
+  --arrival-depth: 24px;
+  --arrival-x: 4px;
+  --arrival-y: 6px;
+  transform: translate3d(0, 0, var(--layer-depth)) rotate(var(--layer-angle));
+}
+.panel h1, .panel h2 { --layer-depth: 12px; }
+.panel > .ink-link { --layer-depth: 20px; }
+.panel > .paper-world,
+.panel > .little-collage,
+.panel > .keepsake {
+  --layer-depth: 64px;
+  --arrival-depth: 84px;
+  --arrival-x: 16px;
+  --arrival-y: 16px;
+  filter: drop-shadow(0 7px 10px #83b0c11c);
+}
+.panel > .keepsake { --layer-angle: -5deg; }
+.turn-back { --turn-side: -1; }
 .chapter { color: #617b86; }
 .quiet-note, .example-caption { color: #67777c; }
 .backup-note { color: #5e737b; }
@@ -113,11 +140,17 @@
   stroke-linecap: round;
   opacity: .9;
 }
-.projector-starting .floating-window {
-  animation: panel-in 1300ms cubic-bezier(.16,.7,.24,1) both;
+.projector-starting .floating-window,
+.arriving .floating-window { animation: none; }
+.projector-starting .panel:not([hidden]) > *,
+.arriving .panel:not([hidden]) > * {
+  animation:
+    layer-reveal var(--reveal-duration, 180ms) linear var(--reveal-delay, 0ms) both,
+    layer-arrive var(--settle-duration, 400ms) cubic-bezier(.2,.65,.25,1) var(--reveal-delay, 0ms) both;
 }
-.projector-starting .projector-beam {
-  animation: beam-open 1300ms cubic-bezier(.16,.7,.24,1) both;
+.projector-starting .projector-beam,
+.arriving .projector-beam {
+  animation: beam-open var(--sweep-duration, 1200ms) cubic-bezier(.16,.7,.24,1) both;
 }
 .projector-starting .projector-source,
 .turn-forward .projector-source,
@@ -125,17 +158,49 @@
   animation: source-ignite 1320ms ease-out both;
 }
 .leaving .projector-beam { opacity: .25; transition: opacity 220ms; }
-.arriving .projector-beam {
-  animation: beam-open 1080ms cubic-bezier(.16,.7,.24,1) both;
+.projection-sweep {
+  position: absolute;
+  z-index: 4;
+  pointer-events: none;
+  left: var(--sweep-left);
+  top: var(--sweep-source);
+  width: var(--sweep-width);
+  height: 2px;
+  opacity: 0;
+  border-radius: 50%;
+  background: linear-gradient(90deg, transparent, #bceaf3b3 24%, #f5ffffed 50%, #bceaf3b3 76%, transparent);
+  transform-origin: 50% 50%;
 }
-.arriving .floating-window::after {
-  animation: image-resolve 1080ms ease-out both;
+.projection-sweep::before {
+  content: "";
+  position: absolute;
+  inset: -8px 5%;
+  border-radius: 50%;
+  background: #a8ddea80;
+  filter: blur(8px);
 }
-@keyframes panel-in {
-  0% { opacity: 0; transform: scale(.35,.025) rotateX(24deg); filter: blur(8px); }
-  20% { opacity: .25; }
-  70% { opacity: .95; transform: scale(1,.98) rotateX(3deg); filter: blur(.5px); }
-  100% { opacity: 1; transform: scale(1) rotateX(3deg); filter: blur(0); }
+.projector-starting .projection-sweep,
+.arriving .projection-sweep {
+  animation: light-sweep var(--sweep-duration, 1200ms) linear both;
+}
+@keyframes layer-reveal {
+  from { clip-path: inset(100% -40px -40px); }
+  to { clip-path: inset(-40px); }
+}
+@keyframes layer-arrive {
+  0% {
+    opacity: 0;
+    transform: translate3d(calc(var(--turn-side, 1) * var(--arrival-x)), var(--arrival-y), calc(var(--layer-depth) - var(--arrival-depth))) rotate(var(--layer-angle));
+  }
+  40% { opacity: 1; }
+  100% { opacity: 1; transform: translate3d(0, 0, var(--layer-depth)) rotate(var(--layer-angle)); }
+}
+@keyframes light-sweep {
+  0% { opacity: 0; transform: translate3d(0, 0, 0) scaleX(.04); }
+  12% { opacity: .9; }
+  18% { transform: translate3d(0, calc(var(--sweep-rise) * .18), 0) scaleX(1); }
+  82% { opacity: .8; }
+  100% { opacity: 0; transform: translate3d(0, var(--sweep-rise), 0) scaleX(1); }
 }
 @keyframes panel-out {
   from { opacity: 1; transform: scale(1) rotateX(3deg); filter: blur(0); }
@@ -152,10 +217,6 @@
   28% { opacity: 1; transform: scale(1.2); }
   100% { opacity: 1; transform: scale(1); }
 }
-@keyframes image-resolve {
-  0% { opacity: 1; background-position-y: 24px; }
-  100% { opacity: 1; background-position-y: 0; }
-}
 @media (max-width: 600px) {
   .floating-stack { width: calc(100% - 20px); }
   .floating-window { border-radius: 15px; }
@@ -171,11 +232,15 @@
 }
 .reduce-motion .floating-window,
 .reduce-motion .floating-window::after,
+.reduce-motion .panel > *,
 .reduce-motion .projector-beam,
 .reduce-motion .projector-source,
 .reduce-motion .turning-leaf { animation: none !important; transition: none !important; }
 .reduce-motion .floating-window { transform: none; }
-.reduce-motion .turning-leaf { display: none; }
+.reduce-motion .panel > * { clip-path: none; }
+.reduce-motion .turning-leaf,
+.reduce-motion .projection-sweep { display: none; }
 @media (prefers-reduced-motion: reduce) {
   .floating-window { transform: none; }
+  .projection-sweep { display: none; }
 }

@@ -14,6 +14,9 @@
   const book = document.querySelector('.book-base');
   const projector = document.getElementById('projector');
   const systemMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const sweepDuration = 1200;
+  const resolveDuration = 220;
+  const entryDuration = sweepDuration + resolveDuration + 40;
   const names = ['ようこそ', 'ページづくり', '保存の案内'];
   const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
   let index = Math.max(0, panels.findIndex(panel => '#' + panel.id === location.hash));
@@ -30,6 +33,8 @@
     const right = stack.offsetLeft + stack.offsetWidth - 12;
     const top = stack.offsetTop + 32;
     const bottom = stack.offsetTop + display.offsetHeight;
+    const scanTop = stack.offsetTop + 8;
+    const scanDistance = Math.max(1, sourceY - scanTop);
     const set = (id, attrs) => {
       const node = document.getElementById(id);
       Object.entries(attrs).forEach(([key, value]) => node.setAttribute(key, String(value)));
@@ -38,6 +43,24 @@
     projector.style.setProperty('--source-x', sourceX + 'px');
     projector.style.setProperty('--source-y', sourceY + 'px');
     display.style.setProperty('--source-gap', Math.max(0, sourceY - bottom) + 'px');
+    scene.style.setProperty('--sweep-left', left + 'px');
+    scene.style.setProperty('--sweep-width', right - left + 'px');
+    scene.style.setProperty('--sweep-source', sourceY + 'px');
+    scene.style.setProperty('--sweep-rise', -scanDistance + 'px');
+    scene.style.setProperty('--sweep-duration', sweepDuration + 'ms');
+    // Reveal each layer as the light crosses its bottom, then let its depth settle.
+    // Measuring layout rather than transformed bounds also keeps text zoom reliable.
+    [...panels[index].children].forEach(layer => {
+      let layerTop = 0;
+      for (let node = layer; node && node !== scene; node = node.offsetParent) {
+        layerTop += node.offsetTop;
+      }
+      const delay = Math.max(0, (sourceY - layerTop - layer.offsetHeight) / scanDistance * sweepDuration);
+      const duration = Math.max(50, layer.offsetHeight / scanDistance * sweepDuration);
+      layer.style.setProperty('--reveal-delay', delay + 'ms');
+      layer.style.setProperty('--reveal-duration', duration + 'ms');
+      layer.style.setProperty('--settle-duration', duration + resolveDuration + 'ms');
+    });
     set('beam-volume', {d:`M ${left} ${top} L ${right} ${top} L ${sourceX + 5} ${sourceY} L ${sourceX - 5} ${sourceY} Z`});
     set('beam-left', {d:`M ${left} ${top} L ${sourceX} ${sourceY}`});
     set('beam-center', {d:`M ${sourceX} ${top + 80} L ${sourceX} ${sourceY}`});
@@ -94,7 +117,7 @@
         showPage(nextIndex);
         scene.classList.remove('leaving');
         scene.classList.add('arriving');
-        await wait(1100);
+        await wait(entryDuration);
       }
       // Page changes stay within this prototype and never create a new history entry.
       history.replaceState(null, '', '#' + panels[index].id);
@@ -155,5 +178,5 @@
     window.addEventListener('resize', alignProjection);
   }
   scene.classList.add('projector-starting');
-  setTimeout(() => scene.classList.remove('projector-starting'), 1450);
+  setTimeout(() => scene.classList.remove('projector-starting'), entryDuration);
 })();

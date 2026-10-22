@@ -11,7 +11,7 @@
 @media(max-width:350px){.exhibit{padding:0 12px}.room-header{padding:12px 15px}.room-caption{margin-bottom:23px}.panel{padding:21px 17px 20px}.panel h1{font-size:28px}.panel h2{font-size:21px}.paper-world{height:116px}.panel-copy{font-size:10.5px}.floating-window,.panel{min-height:430px}.little-collage{height:176px}.ink-link{font-size:10.5px}.backup-note{font-size:10px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.floating-window{transform:none}.turning-leaf{display:none}}
 
-/* The glass image is projected from the book's gutter, not a separate card. */
+/* A frameless image of light rises from the book's gutter. */
 .floating-stack {
   width: min(520px, 82%);
   animation: none;
@@ -37,28 +37,21 @@
 }
 .floating-window::before {
   inset: 0;
-  border: 1px solid #a2d6e47d;
-  border-top-color: #ffffffc9;
-  background: linear-gradient(155deg, #ffffff4f, #e6f5f830 45%, #c7e9f126 80%, transparent);
-  box-shadow: inset 0 1px 2px #ffffffd9, 0 0 16px #a2d5e42e;
-  backdrop-filter: blur(5px) saturate(1.12);
-  -webkit-backdrop-filter: blur(5px) saturate(1.12);
-  mask-image: linear-gradient(#000 74%, #0008 92%, transparent 100%);
-  -webkit-mask-image: linear-gradient(#000 74%, #0008 92%, transparent 100%);
+  border: 0;
+  background: radial-gradient(ellipse at 50% 44%, #ffffff42, #d4edf329 46%, transparent 74%);
+  box-shadow: none;
+  backdrop-filter: blur(4px) saturate(1.08);
+  -webkit-backdrop-filter: blur(4px) saturate(1.08);
+  mask-image: radial-gradient(ellipse at 50% 44%, #000 18%, #000a 48%, transparent 74%);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 44%, #000 18%, #000a 48%, transparent 74%);
 }
 .floating-window::after {
   inset: 0;
   background: repeating-linear-gradient(0deg, #64a6be0c 0 1px, transparent 1px 5px);
-  mask-image: linear-gradient(transparent, #0006 30%, #0008 65%, transparent 97%);
-  -webkit-mask-image: linear-gradient(transparent, #0006 30%, #0008 65%, transparent 97%);
+  mask-image: radial-gradient(ellipse at 50% 50%, #0009, transparent 72%);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 50%, #0009, transparent 72%);
 }
-.floating-window .corner {
-  width: 13px;
-  height: 13px;
-  border-color: #8ec5d66e;
-}
-.floating-window .corner-bl,
-.floating-window .corner-br { display: none; }
+.floating-window .corner { display: none; }
 .panel { position: relative; z-index: 1; }
 .chapter { color: #617b86; }
 .quiet-note, .example-caption { color: #67777c; }
@@ -174,7 +167,7 @@
   .source-core { stroke-width: 1.3; }
 }
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-  .floating-window::before { background: linear-gradient(160deg, #f3f8f5a6, #e6f3f466 80%, transparent); }
+  .floating-window::before { background: radial-gradient(ellipse at 50% 44%, #f3f8f580, #e6f3f43d 46%, transparent 74%); }
 }
 .reduce-motion .floating-window,
 .reduce-motion .floating-window::after,

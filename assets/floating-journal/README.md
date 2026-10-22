@@ -26,7 +26,7 @@ This is for visual review. Do not merge to main before user approval.
 
 ## Projection refinement
 
-The glass treatment now reads as a hologram projected from the book: a light source follows the gutter, a soft fan of light connects it to the pane, and the pane's lower border fades into that light. The book sits closer to the information, and the separate stacked glass sheets are removed. On entry and each page turn, the pane grows upward from the light source; the page-turn emergence lasts 1.08 seconds. Fine static scan lines suggest a projection without making the text or pictures translucent. There is no looping movement.
+The treatment now reads as a frameless hologram projected from the book: a light source follows the gutter, and a soft fan of light connects it to the information. The rectangular outline and corner marks are hidden; the remaining translucent glow and fine static scan lines fade in every direction without making the text or pictures translucent. The book sits closer to the information, and the separate stacked glass sheets are removed. On entry and each page turn, the information grows upward from the light source; the page-turn emergence lasts 1.08 seconds. There is no looping movement.
 
 The source position and animation origin use untransformed layout coordinates, updated on page changes and resizing, so the beam remains attached to the book. All guidance, links, and existing artwork are retained. No new image assets, packages, or services are needed.
 

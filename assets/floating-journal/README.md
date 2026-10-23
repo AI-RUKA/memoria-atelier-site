@@ -30,8 +30,16 @@ The treatment now reads as a frameless hologram projected from the book: a light
 
 On entry and each page turn, a single soft light band travels upward from the book in 1.2 seconds. Each piece of information reveals from the bottom as the band reaches its layout position, then settles into place; controls unlock after the 1.46-second entrance. Illustrations sit closer to the viewer in CSS perspective and move farther than the text during the entrance. The warm palette, frameless silhouette, existing artwork and guidance remain intact. Text is fully opaque and unclipped once the entrance finishes. Reduced motion skips both the sweep and the layered reveal.
 
-The source position and animation origin use untransformed layout coordinates, updated on page changes and resizing, so the beam remains attached to the book. All guidance, links, and existing artwork are retained. No new image assets, packages, or services are needed.
+The source position and animation origin use untransformed layout coordinates, updated on page changes and resizing, so the beam remains attached to the book. Destination links, existing artwork, and the separate guide pages are retained. No new image assets, packages, or services are needed.
 
 Verified in a local Chromium preview at desktop, 320px, and 390px CSS viewport widths: all three panels remain readable, no mobile horizontal overflow, buttons and page dots work, controls unlock after the updated animation, and the light source stays aligned with the gutter. Manual reduced motion disables the pane and beam animations; system reduced-motion styles remain in place. Real-device touch and Safari still need user review.
 
 Depth/sweep review: checked the active sweep and layer animation styles during arrival, full-opacity unclipped content after arrival, restored controls, and immediate readable content with no sweep under manual reduced motion. Mobile widths remain free of horizontal overflow.
+
+## Concise guide and glass controls
+
+The floating pages now use shorter headings and one-line invitations. Repeated branding, English chapter labels, and repeated slogans were removed to leave more room for the artwork and projection. Free use without registration, browser-local storage, and the backup reminder remain explicit. All link destinations are unchanged; the existing entrance, saving guide, and prompt shelf are untouched.
+
+Primary links use a soft glass pill with a small arrow, and page turns use round glass buttons. Three illuminated dots replace the visible duplicate page counter; its text and the live page announcement remain available to assistive technology. Arrow targets are 52px and dot targets are 44px. The background fills the viewport even when the shorter content no longer needs scrolling.
+
+Verified in Chromium at desktop, 320px, and 390px: all three pages are readable with no horizontal overflow and stable panel heights (450px desktop, 422px mobile). Next, direct page selection, wraparound, keyboard navigation, and manual reduced motion work. All content is opaque and unclipped after arrival, and controls unlock. Link destinations match the previous version; JavaScript syntax and diff whitespace checks pass. Real-device swipe and Safari remain unverified.

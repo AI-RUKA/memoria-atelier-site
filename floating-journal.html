@@ -13,11 +13,9 @@
 <body>
   <header class="room-header">
     <a class="back-link" href="./index.html"><span aria-hidden="true">←</span> 入口へ</a>
-    <p>MEMORIA <em>atelier</em></p>
     <button class="motion-toggle" type="button" aria-pressed="false" hidden>動きをひかえめに</button>
   </header>
   <main class="exhibit">
-    <p class="room-caption">本からひらく、小さなアトリエ。</p>
     <div class="scene" id="scene">
       <svg class="projector" id="projector" aria-hidden="true" focusable="false" preserveAspectRatio="none">
         <defs>
@@ -57,34 +55,30 @@
           <span class="corner corner-tl" aria-hidden="true"></span><span class="corner corner-tr" aria-hidden="true"></span>
           <span class="corner corner-bl" aria-hidden="true"></span><span class="corner corner-br" aria-hidden="true"></span>
           <section class="panel welcome-panel" id="welcome" aria-labelledby="welcome-title">
-            <p class="chapter">01 <span>WELCOME</span></p>
             <h1 id="welcome-title">MEMORIA <em>atelier</em></h1>
-            <p class="intro-line">思い出を、一冊に。</p>
             <div class="paper-world" role="img" aria-label="紙の本棚や花、手紙が広がる折り紙のジャーナル"></div>
-            <p class="panel-copy">写真も、ことばも、好きなシールも。<br>自由に重ねる、あなたのジャーナル。</p>
-            <a class="ink-link" href="https://memoria-atelier-hxr.netlify.app/" target="_blank" rel="noopener noreferrer">MEMORIAをひらく <span aria-hidden="true">↗</span></a>
+            <p class="panel-copy">写真とことばをつづるジャーナル。</p>
+            <a class="ink-link" href="https://memoria-atelier-hxr.netlify.app/" target="_blank" rel="noopener noreferrer">MEMORIAをひらく <span class="link-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a>
             <p class="quiet-note">無料・アカウント登録なし</p>
           </section>
           <section class="panel create-panel" id="create" aria-labelledby="create-title" hidden>
-            <p class="chapter">02 <span>YOUR LITTLE WORLD</span></p>
-            <h2 id="create-title">好きなものを、<br class="mobile-break">一枚に。</h2>
+            <h2 id="create-title">好き、を集めて。</h2>
             <div class="little-collage" role="img" aria-label="紙に写真風の折り紙イラストとメモ、花の飾りを重ねたページづくりのイメージ">
               <div class="collage-photo"><div class="collage-photo-art"></div><span>a little memory</span></div>
-              <div class="collage-note"><span>今日のかけら</span><i></i><i></i><i></i><em>好き、を集めて。</em></div>
+              <div class="collage-note"><span>今日のかけら</span><i></i><i></i><i></i></div>
               <img class="collage-flower" src="./assets/materials/transparent/flower-brooch.png" width="140" height="140" alt="">
               <span class="paper-tape" aria-hidden="true"></span>
             </div>
-            <p class="example-caption">ページづくりのイメージ</p>
-            <p class="panel-copy">写真・文字・シール・手書きを重ねて、<br>好きな場所に、好きな大きさで。</p>
-            <a class="ink-link" href="./sticker-prompts.html">シールのプロンプト棚へ <span aria-hidden="true">→</span></a>
+            <p class="example-caption">ページのイメージ</p>
+            <p class="panel-copy">シールも手書きも、自由に重ねて。</p>
+            <a class="ink-link" href="./sticker-prompts.html">シールのプロンプト棚 <span class="link-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></a>
           </section>
           <section class="panel save-panel" id="save" aria-labelledby="save-title" hidden>
-            <p class="chapter">03 <span>KEEP YOUR MEMORIES</span></p>
-            <h2 id="save-title">大切な一冊を、<br>これからも。</h2>
+            <h2 id="save-title">大切な一冊を守る。</h2>
             <div class="keepsake" aria-hidden="true"><div class="envelope-back"></div><div class="letter"><span>dear memories,</span><i></i><i></i><i></i></div><div class="envelope-front"></div><span class="seal">M</span></div>
-            <p class="panel-copy">本や写真は、使っているブラウザの<br>端末内に保存されます。</p>
-            <p class="backup-note">ときどき、本棚をバックアップ。<br>大切な一冊の、もうひとつの置き場所に。</p>
-            <a class="ink-link" href="./security.html">保存と安心について <span aria-hidden="true">→</span></a>
+            <p class="panel-copy">本や写真は、この端末の<br>ブラウザ内に保存。</p>
+            <p class="backup-note">ときどき本棚をバックアップ。</p>
+            <a class="ink-link" href="./security.html">保存と安心について <span class="link-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></a>
           </section>
         </div>
       </div>
@@ -96,14 +90,14 @@
       </div>
     </div>
     <nav class="page-controls" aria-label="本をめくる" hidden>
-      <button class="turn-button" id="previous" type="button" aria-label="前のページへ"><span aria-hidden="true">←</span></button>
-      <div class="page-index"><p id="page-count">01 <span>/ 03</span></p><div class="page-dots"><button type="button" data-page="0" aria-label="1ページ目：ようこそ" aria-current="page"></button><button type="button" data-page="1" aria-label="2ページ目：ページづくり"></button><button type="button" data-page="2" aria-label="3ページ目：保存の案内"></button></div></div>
-      <button class="turn-button" id="next" type="button" aria-label="次のページへ"><span aria-hidden="true">→</span></button>
+      <button class="turn-button" id="previous" type="button" aria-label="前のページへ"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5m6-6-6 6 6 6"/></svg></button>
+      <div class="page-index"><p class="sr-only" id="page-count">01 <span>/ 03</span></p><div class="page-dots"><button type="button" data-page="0" aria-label="1ページ目：ようこそ" aria-current="page"></button><button type="button" data-page="1" aria-label="2ページ目：ページづくり"></button><button type="button" data-page="2" aria-label="3ページ目：保存の案内"></button></div></div>
+      <button class="turn-button" id="next" type="button" aria-label="次のページへ"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
     </nav>
-    <p class="gesture-hint" hidden>左右にそっとなぞるか、矢印でめくってね。</p>
+    <p class="gesture-hint" hidden>左右になぞって、めくる</p>
     <p class="sr-only" role="status" aria-live="polite" aria-atomic="true" id="page-announcement"></p>
     <noscript><p class="no-script-links"><a href="./index.html">入口のご案内へ</a> · <a href="./security.html">保存と安心について</a></p></noscript>
   </main>
-  <footer class="room-footer">小さな思い出に、ひとつの居場所を。<span>MEMORIA atelier · H × RUKA</span></footer>
+  <footer class="room-footer"><span>MEMORIA atelier · H × RUKA</span></footer>
 </body>
 </html>

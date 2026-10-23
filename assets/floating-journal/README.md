@@ -47,3 +47,24 @@ Verified in Chromium at desktop, 320px, and 390px: all three pages are readable 
 The header now contains only the entrance link. The manual motion button and its unused event handler, state, and styles have been removed. System reduced-motion handling still skips the animated page turn, suppresses the light sweep and layered reveal, and updates when the device preference changes.
 
 After removing the motion button, Chromium review at 320px and 390px confirmed the header contains only the entrance link, normal page turns and direct selection still work, controls unlock, content reaches full opacity, and horizontal overflow is absent. System preference handling was reviewed in source; device-level reduced motion was not re-emulated in this pass.
+
+## Circular hologram illustration trial
+
+The welcome illustration now uses `assets/floating-journal/circular-atelier-v1.webp`: a translucent 3D bookshelf, two memory photos, and a blue envelope over a thin circular glass disc. This is a single-illustration style trial; the page-making collage and saving envelope retain their existing artwork. The old origami asset remains in the repository and is still used by the collage. Text, destinations, controls, physical book, and motion behavior are unchanged.
+
+Mode: built-in image generation, with `assets/origami/journal-ivory.webp` supplied as a content/palette reference. The generated 1536 × 1024 RGBA PNG was encoded as WebP quality 92 with its dimensions and alpha preserved. The web asset is 145462 bytes; no cropping, recoloring, alpha removal, or visual retouching was performed. Its background is transparent rather than a rectangular plate. CSS uses contain sizing and disables the former crop mask and multiply blend only for this illustration. Desktop panels use a 466px minimum to keep the book steady as pages turn; mobile retains the 422px minimum.
+
+Final built-in prompt:
+
+```text
+Use case: style-transfer.
+Asset type: a single transparent 3D hero illustration for the MEMORIA floating-journal website.
+Input image 1 is a style/content reference: reuse its little bookshelf, ivory books, blue letter envelope, and small framed memory photos. Create a new compact circular composition, not a crop of the rectangular scene.
+Primary request: turn these journal objects into a delicate digital hologram, a miniature 3D memory atelier hovering over one thin transparent circular glass disc.
+Composition: one centered self-contained cluster, front view from slightly above so the circular disc reads as a graceful ellipse. A small curved bookshelf with 4 ivory and powder-blue books behind, just two separate floating photo cards at different depths, and one blue envelope in front. Keep the silhouette rounded, airy and simple, with clear gaps between objects. Fit the entire illustration including the disc and glow within the canvas, generous transparent margin. Landscape 3:2 canvas.
+Style: polished high-quality 3D render, luminous translucent glass and softly glowing digitally projected surfaces, gentle beveled edges and fine luminous outlines. Subtle refracted reflections and a few very fine etched circular marks on the disc, no readable text. The scene should feel like a warm holographic keepsake being projected upward from a physical book outside the image.
+Palette: ivory remains the main color, very pale powder blue and soft cyan accents, quiet muted blue leaves as a tiny single detail only. Refined, calm, warm and cute, crisp on a light ivory webpage. Keep objects legible and softly solid at their centers with translucent rims. Moderate glow only, not washed out.
+Constraints: genuine transparent alpha outside the objects and glow, clean antialiased edges. No enclosing glass dome, no bubble, no full sphere, no external background, no rectangular panel, no open-book base, no room, no window, no tabletop, no extra flowers or decorations, no text, no symbols, no logo, no people, no watermark. No dark science fiction, no saturated electric neon, no opaque blue backdrop, no checkerboard baked in.
+```
+
+Verified after integration: PNG and WebP alpha were inspected; the background has zero-alpha corners. Chromium at 320px and 390px shows the full contained silhouette with no horizontal overflow and a 422px panel height. All three desktop pages share a 466px height. Page turns, page selection, and control restoration work. The original image remains available; all destination links match the previous version. JavaScript syntax and diff whitespace checks pass. Real-device swipe, Safari, and device-level reduced-motion emulation were not repeated for this asset-only change.

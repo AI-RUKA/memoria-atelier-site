@@ -390,3 +390,20 @@ body { min-height: 100vh; min-height: 100svh; }
   .panel-copy { font-size: 11px; }
   .floating-window .ink-link { font-size: 11px; }
 }
+
+/* One rounded, transparent miniature for the welcome-page style trial. */
+.paper-world.circular-world {
+  width: 360px;
+  height: 210px;
+  margin: 4px 0 0;
+  background: url('./assets/floating-journal/circular-atelier-v1.webp') center / contain no-repeat;
+  mix-blend-mode: normal;
+  mask-image: none;
+  -webkit-mask-image: none;
+}
+@media (min-width: 601px) {
+  .floating-window, .panel { min-height: 466px; }
+}
+@media (max-width: 600px) {
+  .paper-world.circular-world { width: 100%; height: clamp(164px, 48vw, 190px); margin: 4px 0 0; }
+}

@@ -407,3 +407,54 @@ body { min-height: 100vh; min-height: 100svh; }
 @media (max-width: 600px) {
   .paper-world.circular-world { width: 100%; height: clamp(164px, 48vw, 190px); margin: 4px 0 0; }
 }
+
+/* Editable lettering follows the miniature's upper and lower curves. */
+.welcome-panel { justify-content: center; }
+.welcome-panel > .sr-only { animation: none !important; transform: none; }
+.hologram-orbit {
+  --layer-depth: 64px;
+  --arrival-depth: 84px;
+  --arrival-x: 16px;
+  --arrival-y: 16px;
+  position: relative;
+  flex: 0 0 auto;
+  width: calc(100% + 30px);
+  max-width: 400px;
+  aspect-ratio: 420 / 320;
+  margin: 0 0 18px;
+}
+.hologram-orbit .paper-world.circular-world {
+  position: absolute;
+  left: 5.714%;
+  top: 17.8125%;
+  width: 88.572%;
+  max-width: none;
+  height: 77.5%;
+  margin: 0;
+  filter: drop-shadow(0 7px 10px #83b0c11c);
+}
+.orbit-lettering {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+  filter: drop-shadow(0 2px 1px #80a2ab29);
+}
+.orbit-title {
+  font: 32px var(--serif);
+  letter-spacing: 2.8px;
+  fill: #4c7484;
+  stroke: #efffffaa;
+  stroke-width: .4px;
+  paint-order: stroke fill;
+  text-shadow: 0 0 9px #a7dfed80, 0 1px 0 #ffffffdf;
+}
+.orbit-atelier { font-size: 25px; font-style: italic; letter-spacing: 1.1px; }
+.orbit-copy {
+  font: 18px system-ui, sans-serif;
+  letter-spacing: .7px;
+  fill: #4e7180;
+  text-shadow: 0 0 8px #b0e7f178, 0 1px 0 #ffffffdf;
+}

@@ -68,3 +68,11 @@ Constraints: genuine transparent alpha outside the objects and glow, clean antia
 ```
 
 Verified after integration: PNG and WebP alpha were inspected; the background has zero-alpha corners. Chromium at 320px and 390px shows the full contained silhouette with no horizontal overflow and a 422px panel height. All three desktop pages share a 466px height. Page turns, page selection, and control restoration work. The original image remains available; all destination links match the previous version. JavaScript syntax and diff whitespace checks pass. Real-device swipe, Safari, and device-level reduced-motion emulation were not repeated for this asset-only change.
+
+## Lettering around the hologram
+
+On the welcome page, the title follows the upper arc of the circular illustration and the same short description follows a lower, upright arc. Both use editable SVG text paths, the existing fonts, and a faint blue edge glow. The image and lettering share the existing depth and entrance animation as one group. No looping movement or new image asset was added.
+
+The HTML heading and description retain the exact wording for assistive technology, with the decorative SVG hidden from the accessibility tree to avoid repeated announcements. The app link and free/no-registration note remain horizontal. Other pages, destinations, and motion preferences are unchanged.
+
+Verified in Chromium at desktop, 320px, and 390px: readable curved text, no clipping or horizontal overflow, one accessible heading and description, and stable panel heights (466px desktop, 422px mobile). Turning away and returning restores fully visible, unclipped artwork and lettering, and the controls unlock. Link destinations and heading text match the previous version; JavaScript syntax and diff whitespace checks pass. Safari, real-device swipe, and device-level reduced-motion emulation were not repeated for this layout change.

@@ -54,9 +54,19 @@
           <span class="corner corner-tl" aria-hidden="true"></span><span class="corner corner-tr" aria-hidden="true"></span>
           <span class="corner corner-bl" aria-hidden="true"></span><span class="corner corner-br" aria-hidden="true"></span>
           <section class="panel welcome-panel" id="welcome" aria-labelledby="welcome-title">
-            <h1 id="welcome-title">MEMORIA <em>atelier</em></h1>
-            <div class="paper-world circular-world" role="img" aria-label="透明な円形の台座に、本棚・写真・手紙が立体で浮かぶ小さなアトリエ"></div>
-            <p class="panel-copy">写真とことばをつづるジャーナル。</p>
+            <h1 class="sr-only" id="welcome-title">MEMORIA <em>atelier</em></h1>
+            <div class="hologram-orbit">
+              <div class="paper-world circular-world" role="img" aria-label="透明な円形の台座に、本棚・写真・手紙が立体で浮かぶ小さなアトリエ"></div>
+              <svg class="orbit-lettering" viewBox="0 0 420 320" aria-hidden="true" focusable="false">
+                <defs>
+                  <path id="welcome-title-arc" d="M32 165 A178 118 0 0 1 388 165"/>
+                  <path id="welcome-copy-arc" d="M35 224 Q210 376 385 224"/>
+                </defs>
+                <text class="orbit-title" text-anchor="middle"><textPath href="#welcome-title-arc" startOffset="50%">MEMORIA<tspan class="orbit-atelier" dx="10">atelier</tspan></textPath></text>
+                <text class="orbit-copy" text-anchor="middle"><textPath href="#welcome-copy-arc" startOffset="50%">写真とことばをつづるジャーナル。</textPath></text>
+              </svg>
+            </div>
+            <p class="panel-copy sr-only">写真とことばをつづるジャーナル。</p>
             <a class="ink-link" href="https://memoria-atelier-hxr.netlify.app/" target="_blank" rel="noopener noreferrer">MEMORIAをひらく <span class="link-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a>
             <p class="quiet-note">無料・アカウント登録なし</p>
           </section>

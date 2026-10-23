@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f3eb">
+  <meta name="robots" content="noindex, nofollow">
+  <title>浮かぶ本のアトリエ | MEMORIA atelier</title>
+  <meta name="description" content="本をめくると、案内がふわっと浮かび上がるMEMORIAの小さな展示室。">
+  <link rel="stylesheet" href="./floating-journal.css">
+  <script src="./floating-journal.js" defer></script>
+</head>
+<body>
+  <header class="room-header">
+    <a class="back-link" href="./index.html"><span aria-hidden="true">←</span> 入口へ</a>
+  </header>
+  <main class="exhibit">
+    <div class="scene" id="scene">
+      <svg class="projector" id="projector" aria-hidden="true" focusable="false" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="projection-air" x1="0" y1="0" x2="0" y2="1">
+            <stop stop-color="#b9e7f0" stop-opacity="0"/>
+            <stop offset=".55" stop-color="#8dcbdc" stop-opacity=".06"/>
+            <stop offset=".86" stop-color="#79c8df" stop-opacity=".22"/>
+            <stop offset="1" stop-color="#b4edfa" stop-opacity=".7"/>
+          </linearGradient>
+          <linearGradient id="projection-ray" x1="0" y1="0" x2="0" y2="1">
+            <stop stop-color="#87c8dc" stop-opacity="0"/>
+            <stop offset=".67" stop-color="#6dbdd4" stop-opacity=".2"/>
+            <stop offset="1" stop-color="#f4ffff" stop-opacity=".95"/>
+          </linearGradient>
+          <radialGradient id="projection-glow">
+            <stop stop-color="#ffffff" stop-opacity=".95"/>
+            <stop offset=".35" stop-color="#c9f5ff" stop-opacity=".8"/>
+            <stop offset="1" stop-color="#81cfe6" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <g class="projector-beam">
+          <path id="beam-volume" fill="url(#projection-air)"/>
+          <path id="beam-left" class="beam-ray"/>
+          <path id="beam-center" class="beam-ray beam-center"/>
+          <path id="beam-right" class="beam-ray"/>
+        </g>
+        <g class="projector-source">
+          <ellipse id="source-halo" fill="url(#projection-glow)"/>
+          <ellipse id="source-ring" class="source-ring"/>
+          <path id="source-spine" class="source-spine"/>
+          <path id="source-core" class="source-core"/>
+        </g>
+      </svg>
+      <span class="projection-sweep" aria-hidden="true"></span>
+      <div class="floating-stack">
+        <div class="floating-window" id="display" aria-busy="false">
+          <span class="corner corner-tl" aria-hidden="true"></span><span class="corner corner-tr" aria-hidden="true"></span>
+          <span class="corner corner-bl" aria-hidden="true"></span><span class="corner corner-br" aria-hidden="true"></span>
+          <section class="panel welcome-panel" id="welcome" aria-labelledby="welcome-title">
+            <h1 class="sr-only" id="welcome-title">MEMORIA <em>atelier</em></h1>
+            <div class="hologram-orbit">
+              <div class="paper-world circular-world" role="img" aria-label="透明な円形の台座に、本棚・写真・手紙が立体で浮かぶ小さなアトリエ"></div>
+              <svg class="orbit-lettering" viewBox="0 0 420 320" aria-hidden="true" focusable="false">
+                <defs>
+                  <path id="welcome-title-arc" d="M32 165 A178 118 0 0 1 388 165"/>
+                  <path id="welcome-copy-arc" d="M35 224 Q210 376 385 224"/>
+                </defs>
+                <text class="orbit-title" text-anchor="middle"><textPath href="#welcome-title-arc" startOffset="50%">MEMORIA<tspan class="orbit-atelier" dx="10">atelier</tspan></textPath></text>
+                <text class="orbit-copy" text-anchor="middle"><textPath href="#welcome-copy-arc" startOffset="50%">写真とことばをつづるジャーナル。</textPath></text>
+              </svg>
+            </div>
+            <p class="panel-copy sr-only">写真とことばをつづるジャーナル。</p>
+            <a class="ink-link" href="https://memoria-atelier-hxr.netlify.app/" target="_blank" rel="noopener noreferrer">MEMORIAをひらく <span class="link-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a>
+            <p class="quiet-note">無料・アカウント登録なし</p>
+          </section>
+          <section class="panel create-panel" id="create" aria-labelledby="create-title" hidden>
+            <h2 id="create-title">好き、を集めて。</h2>
+            <div class="little-collage" role="img" aria-label="紙に写真風の折り紙イラストとメモ、花の飾りを重ねたページづくりのイメージ">
+              <div class="collage-photo"><div class="collage-photo-art"></div><span>a little memory</span></div>
+              <div class="collage-note"><span>今日のかけら</span><i></i><i></i><i></i></div>
+              <img class="collage-flower" src="./assets/materials/transparent/flower-brooch.png" width="140" height="140" alt="">
+              <span class="paper-tape" aria-hidden="true"></span>
+            </div>
+            <p class="example-caption">ページのイメージ</p>
+            <p class="panel-copy">シールも手書きも、自由に重ねて。</p>
+            <a class="ink-link" href="./sticker-prompts.html">シールのプロンプト棚 <span class="link-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></a>
+          </section>
+          <section class="panel save-panel" id="save" aria-labelledby="save-title" hidden>
+            <h2 id="save-title">大切な一冊を守る。</h2>
+            <div class="keepsake" aria-hidden="true"><div class="envelope-back"></div><div class="letter"><span>dear memories,</span><i></i><i></i><i></i></div><div class="envelope-front"></div><span class="seal">M</span></div>
+            <p class="panel-copy">本や写真は、この端末の<br>ブラウザ内に保存。</p>
+            <p class="backup-note">ときどき本棚をバックアップ。</p>
+            <a class="ink-link" href="./security.html">保存と安心について <span class="link-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></a>
+          </section>
+        </div>
+      </div>
+      <div class="book-base" aria-hidden="true">
+        <img class="book-image" src="./assets/floating-journal/open-book.webp" width="1536" height="1024" alt="" fetchpriority="high">
+        <div class="book-inscription"><span>MEMORIA</span><em>the little things, kept.</em></div>
+        <div class="book-page-number">— <span id="book-number">01</span> —</div>
+        <svg class="turning-leaf" viewBox="0 0 300 260" preserveAspectRatio="none"><defs><linearGradient id="leaf-paper"><stop stop-color="#c8ad86"/><stop offset=".12" stop-color="#f2e6d1"/><stop offset=".55" stop-color="#fff9ed"/><stop offset="1" stop-color="#dfc9a5"/></linearGradient><linearGradient id="leaf-fold"><stop stop-color="#937a57" stop-opacity=".3"/><stop offset=".18" stop-color="#d8bd95" stop-opacity="0"/><stop offset="1" stop-color="#80694a" stop-opacity=".1"/></linearGradient></defs><path d="M0 33 C42 0 85 0 126 4 L268 19 L300 230 C167 217 83 194 0 260Z" fill="url(#leaf-paper)" stroke="#e2cfb0"/><path d="M0 33 C42 0 85 0 126 4 L268 19 L300 230 C167 217 83 194 0 260Z" fill="url(#leaf-fold)"/></svg>
+      </div>
+    </div>
+    <nav class="page-controls" aria-label="本をめくる" hidden>
+      <button class="turn-button" id="previous" type="button" aria-label="前のページへ"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5m6-6-6 6 6 6"/></svg></button>
+      <div class="page-index"><p class="sr-only" id="page-count">01 <span>/ 03</span></p><div class="page-dots"><button type="button" data-page="0" aria-label="1ページ目：ようこそ" aria-current="page"></button><button type="button" data-page="1" aria-label="2ページ目：ページづくり"></button><button type="button" data-page="2" aria-label="3ページ目：保存の案内"></button></div></div>
+      <button class="turn-button" id="next" type="button" aria-label="次のページへ"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
+    </nav>
+    <p class="gesture-hint" hidden>左右になぞって、めくる</p>
+    <p class="sr-only" role="status" aria-live="polite" aria-atomic="true" id="page-announcement"></p>
+    <noscript><p class="no-script-links"><a href="./index.html">入口のご案内へ</a> · <a href="./security.html">保存と安心について</a></p></noscript>
+  </main>
+  <footer class="room-footer"><span>MEMORIA atelier · H × RUKA</span></footer>
+</body>
+</html>

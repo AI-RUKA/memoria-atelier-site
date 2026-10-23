@@ -12,7 +12,7 @@ Use case: precise-object-edit. Asset type: isolated open-book base for the MEMOR
 
 ## Review scope
 
-Three pages: welcome, page-making illustration, and saving guidance. Navigate using buttons, page dots, left/right arrow keys or horizontal touch swipes. Vertical scrolling is preserved. The operating system's reduced-motion preference is respected; a page control also reduces motion. No automatic carousel or looping animation.
+Three pages: welcome, page-making illustration, and saving guidance. Navigate using buttons, page dots, left/right arrow keys or horizontal touch swipes. Vertical scrolling is preserved. Motion follows the operating system's reduced-motion preference, including changes while the page is open. There is no separate motion button. No automatic carousel or looping animation.
 
 This is for visual review. Do not merge to main before user approval.
 
@@ -20,7 +20,7 @@ This is for visual review. Do not merge to main before user approval.
 
 - JavaScript syntax and relative asset/link paths checked.
 - Desktop and 320px/390px mobile review frames inspected in Chromium; mobile horizontal overflow corrected.
-- Previous/next buttons, page dots, keyboard wraparound and manual reduced-motion toggle exercised. Panel heights remain stable across the three pages at the inspected mobile sizes.
+- Previous/next buttons, page dots, keyboard wraparound exercised. The former manual reduced-motion toggle was also checked before it was removed. Panel heights remain stable across the three pages at the inspected mobile sizes.
 - Touch swipe handlers are implemented; real-device swipe behavior and iOS Safari still need user review.
 - Existing entrance files are byte-for-byte unchanged from `design/origami-entrance` at `7a017dbb65a00e2d99b657ae2ee8c7593c91fad9`.
 
@@ -32,9 +32,9 @@ On entry and each page turn, a single soft light band travels upward from the bo
 
 The source position and animation origin use untransformed layout coordinates, updated on page changes and resizing, so the beam remains attached to the book. Destination links, existing artwork, and the separate guide pages are retained. No new image assets, packages, or services are needed.
 
-Verified in a local Chromium preview at desktop, 320px, and 390px CSS viewport widths: all three panels remain readable, no mobile horizontal overflow, buttons and page dots work, controls unlock after the updated animation, and the light source stays aligned with the gutter. Manual reduced motion disables the pane and beam animations; system reduced-motion styles remain in place. Real-device touch and Safari still need user review.
+Verified in a local Chromium preview at desktop, 320px, and 390px CSS viewport widths: all three panels remain readable, no mobile horizontal overflow, buttons and page dots work, controls unlock after the updated animation, and the light source stays aligned with the gutter. The system reduced-motion styles and media-query listener remain in place. Real-device touch and Safari still need user review.
 
-Depth/sweep review: checked the active sweep and layer animation styles during arrival, full-opacity unclipped content after arrival, restored controls, and immediate readable content with no sweep under manual reduced motion. Mobile widths remain free of horizontal overflow.
+Depth/sweep review: checked the active sweep and layer animation styles during arrival, full-opacity unclipped content after arrival, restored controls, and immediate readable content with no sweep under the former manual reduced-motion control. Mobile widths remain free of horizontal overflow.
 
 ## Concise guide and glass controls
 
@@ -42,4 +42,8 @@ The floating pages now use shorter headings and one-line invitations. Repeated b
 
 Primary links use a soft glass pill with a small arrow, and page turns use round glass buttons. Three illuminated dots replace the visible duplicate page counter; its text and the live page announcement remain available to assistive technology. Arrow targets are 52px and dot targets are 44px. The background fills the viewport even when the shorter content no longer needs scrolling.
 
-Verified in Chromium at desktop, 320px, and 390px: all three pages are readable with no horizontal overflow and stable panel heights (450px desktop, 422px mobile). Next, direct page selection, wraparound, keyboard navigation, and manual reduced motion work. All content is opaque and unclipped after arrival, and controls unlock. Link destinations match the previous version; JavaScript syntax and diff whitespace checks pass. Real-device swipe and Safari remain unverified.
+Verified in Chromium at desktop, 320px, and 390px: all three pages are readable with no horizontal overflow and stable panel heights (450px desktop, 422px mobile). Next, direct page selection, wraparound, and keyboard navigation work. The former manual reduced-motion control was also checked in that review. All content is opaque and unclipped after arrival, and controls unlock. Link destinations match the previous version; JavaScript syntax and diff whitespace checks pass. Real-device swipe and Safari remain unverified.
+
+The header now contains only the entrance link. The manual motion button and its unused event handler, state, and styles have been removed. System reduced-motion handling still skips the animated page turn, suppresses the light sweep and layered reveal, and updates when the device preference changes.
+
+After removing the motion button, Chromium review at 320px and 390px confirmed the header contains only the entrance link, normal page turns and direct selection still work, controls unlock, content reaches full opacity, and horizontal overflow is absent. System preference handling was reviewed in source; device-level reduced motion was not re-emulated in this pass.

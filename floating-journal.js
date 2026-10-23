@@ -7,7 +7,6 @@
   const count = document.getElementById('page-count');
   const bookNumber = document.getElementById('book-number');
   const announcement = document.getElementById('page-announcement');
-  const motionToggle = document.querySelector('.motion-toggle');
   const controls = document.querySelector('.page-controls');
   const hint = document.querySelector('.gesture-hint');
   const stack = document.querySelector('.floating-stack');
@@ -21,7 +20,6 @@
   const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
   let index = Math.max(0, panels.findIndex(panel => '#' + panel.id === location.hash));
   let busy = false;
-  let quietMotion = false;
   let touchStart = null;
 
   // Use layout coordinates so the light stays attached to the book during animation,
@@ -73,11 +71,7 @@
   }
 
   function applyMotion() {
-    const reduced = quietMotion || systemMotion.matches;
-    document.body.classList.toggle('reduce-motion', reduced);
-    motionToggle.setAttribute('aria-pressed', String(reduced));
-    motionToggle.disabled = systemMotion.matches;
-    motionToggle.textContent = systemMotion.matches ? '動き：端末の設定に合わせる' : reduced ? '動き：ひかえめ' : '動きをひかえめに';
+    document.body.classList.toggle('reduce-motion', systemMotion.matches);
   }
 
   function showPage(nextIndex, announce = true) {
@@ -109,7 +103,7 @@
       document.getElementById(direction > 0 ? 'next' : 'previous').focus({preventScroll:true});
     }
     try {
-      if (quietMotion || systemMotion.matches) {
+      if (systemMotion.matches) {
         showPage(nextIndex);
       } else {
         scene.classList.add(direction > 0 ? 'turn-forward' : 'turn-back', 'leaving');
@@ -159,7 +153,6 @@
     }
   }, {passive:true});
   scene.addEventListener('touchcancel', () => { touchStart = null; }, {passive:true});
-  motionToggle.addEventListener('click', () => { quietMotion = !quietMotion; applyMotion(); });
   systemMotion.addEventListener('change', applyMotion);
   window.addEventListener('hashchange', () => {
     const target = panels.findIndex(panel => '#' + panel.id === location.hash);
@@ -167,7 +160,6 @@
   });
   controls.hidden = false;
   hint.hidden = false;
-  motionToggle.hidden = false;
   applyMotion();
   showPage(index, false);
   if ('ResizeObserver' in window) {

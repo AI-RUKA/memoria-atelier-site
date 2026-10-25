@@ -2,7 +2,7 @@
 
 This separate prototype lives at `floating-journal.html`. The existing entrance page and its links are unchanged.
 
-`open-book.webp` is a 1536 × 1024 RGBA image (WebP quality 93), edited from the floating-book concept image approved in this conversation using the built-in image generation tool. The generated PNG is retained separately; only encoding was changed for the website. The existing materials folder and origami artwork provide the other visuals. The collage is an illustrative composition, not an app screenshot.
+`open-book.webp` is a 1536 × 1024 RGBA image (WebP quality 93), edited from the floating-book concept image approved in this conversation using the built-in image generation tool. The generated PNG is retained separately; only encoding was changed for the website. The circular welcome artwork is a generated illustration; the two full-page journal examples are images supplied by the user.
 
 The prototype uses HTML text and links, CSS transitions, and lightweight SVG page-turn and projection overlays. The book itself is a static raster image, not a fully simulated 3D book. No runtime dependencies, analytics, storage, or external scripts were added. `noindex` keeps this experimental page out of search indexing.
 
@@ -22,7 +22,7 @@ This is for visual review. Do not merge to main before user approval.
 - Desktop and 320px/390px mobile review frames inspected in Chromium; mobile horizontal overflow corrected.
 - Previous/next buttons, page dots, keyboard wraparound exercised. The former manual reduced-motion toggle was also checked before it was removed. Panel heights remain stable across the three pages at the inspected mobile sizes.
 - Touch swipe handlers are implemented; real-device swipe behavior and iOS Safari still need user review.
-- Existing entrance files are byte-for-byte unchanged from `design/origami-entrance` at `7a017dbb65a00e2d99b657ae2ee8c7593c91fad9`.
+- The entrance index and home styles are byte-for-byte unchanged from `design/origami-entrance` at `7a017dbb65a00e2d99b657ae2ee8c7593c91fad9`.
 
 ## Projection refinement
 
@@ -50,7 +50,7 @@ After removing the motion button, Chromium review at 320px and 390px confirmed t
 
 ## Circular hologram illustration trial
 
-The welcome illustration now uses `assets/floating-journal/circular-atelier-v1.webp`: a translucent 3D bookshelf, two memory photos, and a blue envelope over a thin circular glass disc. This is a single-illustration style trial; the page-making collage and saving envelope retain their existing artwork. The old origami asset remains in the repository and is still used by the collage. Text, destinations, controls, physical book, and motion behavior are unchanged.
+The welcome illustration now uses `assets/floating-journal/circular-atelier-v1.webp`: a translucent 3D bookshelf, two memory photos, and a blue envelope over a thin circular glass disc. This is a welcome-illustration style trial. The page-making section uses a supplied full-page journal example, and the saving envelope retains its existing artwork. The old origami asset remains in the repository as the reference for the circular illustration. Text, destinations, controls, physical book, and motion behavior are unchanged.
 
 Mode: built-in image generation, with `assets/origami/journal-ivory.webp` supplied as a content/palette reference. The generated 1536 × 1024 RGBA PNG was encoded as WebP quality 92 with its dimensions and alpha preserved. The web asset is 145462 bytes; no cropping, recoloring, alpha removal, or visual retouching was performed. Its background is transparent rather than a rectangular plate. CSS uses contain sizing and disables the former crop mask and multiply blend only for this illustration. Desktop panels use a 466px minimum to keep the book steady as pages turn; mobile retains the 422px minimum.
 
@@ -73,6 +73,15 @@ Verified after integration: PNG and WebP alpha were inspected; the background ha
 
 On the welcome page, the title follows the upper arc of the circular illustration and the same short description follows a lower, upright arc. Both use editable SVG text paths, the existing fonts, and a faint blue edge glow. The image and lettering share the existing depth and entrance animation as one group. No looping movement or new image asset was added.
 
-The HTML heading and description retain the exact wording for assistive technology, with the decorative SVG hidden from the accessibility tree to avoid repeated announcements. The app link and free/no-registration note remain horizontal. Other pages, destinations, and motion preferences are unchanged.
+The HTML heading and description retain the exact wording for assistive technology, with the decorative SVG hidden from the accessibility tree to avoid repeated announcements. The app link and free/no-registration note remain horizontal. The lettering treatment is limited to the welcome page; existing destination links and motion preferences are unchanged.
 
 Verified in Chromium at desktop, 320px, and 390px: readable curved text, no clipping or horizontal overflow, one accessible heading and description, and stable panel heights (466px desktop, 422px mobile). Turning away and returning restores fully visible, unclipped artwork and lettering, and the controls unlock. Link destinations and heading text match the previous version; JavaScript syntax and diff whitespace checks pass. Safari, real-device swipe, and device-level reduced-motion emulation were not repeated for this layout change.
+
+## Supplied journal examples
+
+- `journal-window-example.webp` comes from the user-supplied `22367.jpg`: 1193 × 1536, WebP quality 92, 91286 bytes. The full page with the paper window, curtain, flowers, and line-art figures replaces the placeholder collage on the page-making panel.
+- `sticker-journal-example.webp` comes from `22365.jpg`: 1175 × 1536, WebP quality 92, 183082 bytes. The full sticker journal page appears in a new, clearly labeled example section of `sticker-prompts.html`, above the existing prompt card. It is a general page-making example, not a claim that every pictured sticker comes from the single prompt below it.
+
+Both are faithful web-format copies, without cropping, reconstruction, recoloring, or generated replacements. Dimensions are preserved; metadata is stripped during encoding. Original uploads and earlier artwork are untouched. The floating preview uses contain sizing and the existing depth/reveal effect; clicking either example opens the full-resolution image in a new tab. The existing site link destinations, prompt text, clipboard handler, and SEO metadata are preserved. The added guide styling is scoped to the new example section.
+
+Verified locally in Chromium at 320px and 390px: both images load, both layouts have no horizontal overflow, and the page-making panel retains its 422px height with a 212px preview. The full-resolution journal image opens at 1193 × 1536. The local HTTP preview exercises the existing clipboard fallback; the prompt text and handler also match the previous version byte-for-byte. Desktop uses a 230px preview inside the existing panel. Real-device swipe and Safari were not repeated for this asset change.

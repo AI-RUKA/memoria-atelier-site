@@ -71,6 +71,7 @@
 .panel > .ink-link { --layer-depth: 20px; }
 .panel > .paper-world,
 .panel > .little-collage,
+.panel > .journal-example,
 .panel > .keepsake {
   --layer-depth: 64px;
   --arrival-depth: 84px;
@@ -457,4 +458,49 @@ body { min-height: 100vh; min-height: 100svh; }
   letter-spacing: .7px;
   fill: #4e7180;
   text-shadow: 0 0 8px #b0e7f178, 0 1px 0 #ffffffdf;
+}
+
+/* A complete journal page floats above the book, with a full-size view. */
+.journal-example {
+  position: relative;
+  display: block;
+  flex: 0 0 auto;
+  height: 230px;
+  max-width: 100%;
+  aspect-ratio: 1193 / 1536;
+  margin: 8px 0 6px;
+  border-radius: 4px;
+}
+.journal-example img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: inherit;
+  box-shadow: 0 0 18px #b3deeb4d, 0 8px 14px -10px #526f7c8c;
+}
+.example-zoom {
+  position: absolute;
+  right: 7px;
+  bottom: 7px;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #ffffffd9;
+  border-radius: 50%;
+  color: #456979;
+  background: #f1fbf0d9;
+  box-shadow: inset 0 1px 2px #fff, 0 2px 6px #6b899c33;
+}
+.example-zoom svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+}
+@media (max-width: 600px) {
+  .journal-example { height: 212px; margin-top: 8px; }
 }

@@ -83,6 +83,23 @@
   line-height: 1.8;
 }
 .prompt-grid { display: grid; gap: 22px; }
+.sticker-example {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) minmax(0,240px);
+  align-items: center;
+  gap: 28px;
+  margin-bottom: 28px;
+  padding: 24px;
+  background: rgba(255,252,245,.68);
+  border: 1px solid rgba(117,88,66,.13);
+  border-radius: 20px;
+}
+.sticker-example h2 { margin: 0 0 14px; font-size: clamp(1.1rem,3vw,1.4rem); line-height: 1.7; }
+.sticker-example p { margin: 0; color: var(--muted); font-size: .85rem; line-height: 1.9; }
+.sticker-example .sticker-example-note { margin-top: 16px; font-size: .72rem; }
+.sticker-example-link { display: block; border-radius: 5px; }
+.sticker-example-link img { display: block; width: 100%; height: auto; border-radius: inherit; box-shadow: 0 6px 14px rgba(91,70,57,.10); }
+.sticker-example-link:focus-visible { outline: 2px solid #4b879f; outline-offset: 5px; }
 .prompt-card {
   overflow: hidden;
   background: rgba(255,252,245,.82);
@@ -138,6 +155,8 @@
   .info-card { padding: 23px 21px; }
   .prompt-head,.prompt-body { padding-left: 19px; padding-right: 19px; }
   .mini-links { grid-template-columns: 1fr; gap: 12px; }
+  .sticker-example { grid-template-columns: 1fr; gap: 18px; padding: 22px; text-align: center; }
+  .sticker-example-link { width: min(100%,260px); justify-self: center; }
 }
 @media (prefers-reduced-motion: reduce) {
   .mini-link { transition: none; }
